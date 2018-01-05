@@ -1,0 +1,684 @@
+
+lab2_skel.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         0000000a  00800100  00000358  000003ec  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000358  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000012  0080010a  0080010a  000003f6  2**0
+                  ALLOC
+  3 .stab         00000a20  00000000  00000000  000003f8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00000eee  00000000  00000000  00000e18  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .comment      00000011  00000000  00000000  00001d06  2**0
+                  CONTENTS, READONLY
+  6 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00001d18  2**2
+                  CONTENTS, READONLY
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   8:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  10:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  14:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  18:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  1c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  20:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  24:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  28:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  2c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  30:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  34:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  38:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  3c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  40:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  44:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  48:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  4c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  50:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  54:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  58:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  5c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  60:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  64:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  68:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  6c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  70:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  74:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  78:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  7c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  80:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  84:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  88:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	e8 e5       	ldi	r30, 0x58	; 88
+  a0:	f3 e0       	ldi	r31, 0x03	; 3
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	aa 30       	cpi	r26, 0x0A	; 10
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+  b2:	21 e0       	ldi	r18, 0x01	; 1
+  b4:	aa e0       	ldi	r26, 0x0A	; 10
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	ac 31       	cpi	r26, 0x1C	; 28
+  be:	b2 07       	cpc	r27, r18
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	0e 94 95 00 	call	0x12a	; 0x12a <main>
+  c6:	0c 94 aa 01 	jmp	0x354	; 0x354 <_exit>
+
+000000ca <__bad_interrupt>:
+  ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ce <debounce_switch>:
+	0x98 //==9
+};
+		
+//***************************************************************************** 
+//Debounsing check from the first lab, with the edit to make it check for each button, depending on the button number.
+int8_t debounce_switch(uint8_t i) {
+  ce:	48 2f       	mov	r20, r24
+static uint16_t state [8];
+  state[i] = (state[i] << 1) | (! bit_is_clear(PINA, i)) | 0xE000;
+  d0:	e8 2f       	mov	r30, r24
+  d2:	f0 e0       	ldi	r31, 0x00	; 0
+  d4:	99 b3       	in	r25, 0x19	; 25
+  d6:	ee 0f       	add	r30, r30
+  d8:	ff 1f       	adc	r31, r31
+  da:	e4 5f       	subi	r30, 0xF4	; 244
+  dc:	fe 4f       	sbci	r31, 0xFE	; 254
+  de:	20 81       	ld	r18, Z
+  e0:	31 81       	ldd	r19, Z+1	; 0x01
+  e2:	22 0f       	add	r18, r18
+  e4:	33 1f       	adc	r19, r19
+  e6:	30 6e       	ori	r19, 0xE0	; 224
+  e8:	89 2f       	mov	r24, r25
+  ea:	90 e0       	ldi	r25, 0x00	; 0
+  ec:	02 c0       	rjmp	.+4      	; 0xf2 <debounce_switch+0x24>
+  ee:	95 95       	asr	r25
+  f0:	87 95       	ror	r24
+  f2:	4a 95       	dec	r20
+  f4:	e2 f7       	brpl	.-8      	; 0xee <debounce_switch+0x20>
+  f6:	81 70       	andi	r24, 0x01	; 1
+  f8:	99 27       	eor	r25, r25
+  fa:	28 2b       	or	r18, r24
+  fc:	39 2b       	or	r19, r25
+  fe:	31 83       	std	Z+1, r19	; 0x01
+ 100:	20 83       	st	Z, r18
+  if (state[i]== 0xF000) return 1;
+ 102:	81 e0       	ldi	r24, 0x01	; 1
+ 104:	21 15       	cp	r18, r1
+ 106:	30 4f       	sbci	r19, 0xF0	; 240
+ 108:	09 f0       	breq	.+2      	; 0x10c <debounce_switch+0x3e>
+ 10a:	80 e0       	ldi	r24, 0x00	; 0
+  return 0;
+}
+ 10c:	08 95       	ret
+
+0000010e <check>:
+/**************check if we reached 1023******************/
+void check(){
+
+if(current_number >1023){
+ 10e:	80 91 0a 01 	lds	r24, 0x010A
+ 112:	90 91 0b 01 	lds	r25, 0x010B
+ 116:	81 15       	cp	r24, r1
+ 118:	94 40       	sbci	r25, 0x04	; 4
+ 11a:	34 f0       	brlt	.+12     	; 0x128 <check+0x1a>
+	current_number=1;
+ 11c:	81 e0       	ldi	r24, 0x01	; 1
+ 11e:	90 e0       	ldi	r25, 0x00	; 0
+ 120:	90 93 0b 01 	sts	0x010B, r25
+ 124:	80 93 0a 01 	sts	0x010A, r24
+ 128:	08 95       	ret
+
+0000012a <main>:
+{
+
+
+
+
+DDRA=0xff; //Make PORTA A all output, because i want to disply the 0 first
+ 12a:	8f ef       	ldi	r24, 0xFF	; 255
+ 12c:	8a bb       	out	0x1a, r24	; 26
+DDRB=0xF0;// Set port bit as output 4-7 bits
+ 12e:	90 ef       	ldi	r25, 0xF0	; 240
+ 130:	97 bb       	out	0x17, r25	; 23
+PORTB=0x70; // to select the zero digit, so we eanble selecters
+ 132:	90 e7       	ldi	r25, 0x70	; 112
+ 134:	98 bb       	out	0x18, r25	; 24
+PORTA=0xFF; // to display 0
+ 136:	8b bb       	out	0x1b, r24	; 27
+ 138:	30 91 0a 01 	lds	r19, 0x010A
+ 13c:	20 91 0b 01 	lds	r18, 0x010B
+
+int current_number_copy = current_number;	//copy the value so we can minuplate it
+int digit=0;				//we will start from the zero digit
+
+/*change register A to be output */
+DDRA=0xFF;
+ 140:	1f ef       	ldi	r17, 0xFF	; 255
+current_number_copy=current_number_copy/10; 
+}
+else if(digit==3){
+
+PORTB=0x00;
+PORTB= 0x40;
+ 142:	40 e4       	ldi	r20, 0x40	; 64
+ 144:	d4 2e       	mov	r13, r20
+PORTA=0xFF;
+PORTA= dec_to_7seg[current_number_copy % 10];
+ 146:	ca e0       	ldi	r28, 0x0A	; 10
+ 148:	d0 e0       	ldi	r29, 0x00	; 0
+current_number_copy=current_number_copy/10; 
+}
+else if(digit==2){
+
+PORTB=0x00;
+PORTB=0x30;
+ 14a:	50 e3       	ldi	r21, 0x30	; 48
+ 14c:	f5 2e       	mov	r15, r21
+current_number_copy=current_number_copy/10; //divide the number by 10 to get rid of the number we just put in digit zero
+}
+else if(digit==1){		//All the rest code follow the same logic as the prevoius if statment
+
+PORTB=0x00;
+PORTB= 0x10;
+ 14e:	00 e1       	ldi	r16, 0x10	; 16
+_delay_ms(1);
+
+
+}
+/********************************** Switch check **************************/
+        PORTB=0x70; // enable selcters
+ 150:	60 e7       	ldi	r22, 0x70	; 112
+ 152:	c6 2e       	mov	r12, r22
+
+int current_number_copy = current_number;	//copy the value so we can minuplate it
+int digit=0;				//we will start from the zero digit
+
+/*change register A to be output */
+DDRA=0xFF;
+ 154:	ee 24       	eor	r14, r14
+ 156:	ea 94       	dec	r14
+DDRB=0xF0;
+ 158:	70 ef       	ldi	r23, 0xF0	; 240
+ 15a:	b7 2e       	mov	r11, r23
+
+}
+/********************************** Switch check **************************/
+        PORTB=0x70; // enable selcters
+	DDRA = 0x00; //Make PORTA input
+	PORTA = 0xFF; //enabling the Pull ups for PORTA
+ 15c:	88 24       	eor	r8, r8
+ 15e:	83 94       	inc	r8
+ 160:	91 2c       	mov	r9, r1
+
+}
+
+//***********************************************************************************
+uint8_t main()
+{
+ 162:	83 2f       	mov	r24, r19
+ 164:	92 2f       	mov	r25, r18
+
+int current_number_copy = current_number;	//copy the value so we can minuplate it
+int digit=0;				//we will start from the zero digit
+
+/*change register A to be output */
+DDRA=0xFF;
+ 166:	ea ba       	out	0x1a, r14	; 26
+DDRB=0xF0;
+ 168:	b7 ba       	out	0x17, r11	; 23
+PORTB=0x00;
+ 16a:	18 ba       	out	0x18, r1	; 24
+PORTA=0xFF;
+ 16c:	eb ba       	out	0x1b, r14	; 27
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 16e:	ef e9       	ldi	r30, 0x9F	; 159
+ 170:	ff e0       	ldi	r31, 0x0F	; 15
+ 172:	31 97       	sbiw	r30, 0x01	; 1
+ 174:	f1 f7       	brne	.-4      	; 0x172 <main+0x48>
+ 176:	00 c0       	rjmp	.+0      	; 0x178 <main+0x4e>
+ 178:	00 00       	nop
+
+/*The logic for getting the transforming the number to the 4-digit-7 segment display. is from the internet. I got the idea and i implement it my self*/
+/* The idea is to get the reminder of the current number and save it in the first digit, then divide the intial number by 10, then get the reminder and save it in the seocnd digit, and so on. You need to stop if the current number become less than 1, that mean there are no more digit */
+_delay_ms(1);
+
+while (current_number_copy >=1) {		//the cope is less than 1 then it mean we displayed all the numbers
+ 17a:	18 16       	cp	r1, r24
+ 17c:	19 06       	cpc	r1, r25
+ 17e:	dc f4       	brge	.+54     	; 0x1b6 <main+0x8c>
+ 180:	20 e0       	ldi	r18, 0x00	; 0
+ 182:	30 e0       	ldi	r19, 0x00	; 0
+if(digit==0){					//if digit is 0 it mean we are in the zero digit	
+ 184:	21 15       	cp	r18, r1
+ 186:	31 05       	cpc	r19, r1
+ 188:	09 f0       	breq	.+2      	; 0x18c <main+0x62>
+ 18a:	72 c0       	rjmp	.+228    	; 0x270 <main+0x146>
+PORTB=0x00;					//Goto digit zero
+ 18c:	18 ba       	out	0x18, r1	; 24
+}
+else if(digit==3){
+
+PORTB=0x00;
+PORTB= 0x40;
+PORTA=0xFF;
+ 18e:	1b bb       	out	0x1b, r17	; 27
+PORTA= dec_to_7seg[current_number_copy % 10];
+ 190:	be 01       	movw	r22, r28
+ 192:	0e 94 82 01 	call	0x304	; 0x304 <__divmodhi4>
+ 196:	fc 01       	movw	r30, r24
+ 198:	e0 50       	subi	r30, 0x00	; 0
+ 19a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 19c:	80 81       	ld	r24, Z
+ 19e:	8b bb       	out	0x1b, r24	; 27
+current_number_copy=current_number_copy/10; 
+ 1a0:	cb 01       	movw	r24, r22
+
+}
+
+digit=digit+1;
+ 1a2:	2f 5f       	subi	r18, 0xFF	; 255
+ 1a4:	3f 4f       	sbci	r19, 0xFF	; 255
+ 1a6:	ef e9       	ldi	r30, 0x9F	; 159
+ 1a8:	ff e0       	ldi	r31, 0x0F	; 15
+ 1aa:	31 97       	sbiw	r30, 0x01	; 1
+ 1ac:	f1 f7       	brne	.-4      	; 0x1aa <main+0x80>
+ 1ae:	00 c0       	rjmp	.+0      	; 0x1b0 <main+0x86>
+ 1b0:	00 00       	nop
+
+/*The logic for getting the transforming the number to the 4-digit-7 segment display. is from the internet. I got the idea and i implement it my self*/
+/* The idea is to get the reminder of the current number and save it in the first digit, then divide the intial number by 10, then get the reminder and save it in the seocnd digit, and so on. You need to stop if the current number become less than 1, that mean there are no more digit */
+_delay_ms(1);
+
+while (current_number_copy >=1) {		//the cope is less than 1 then it mean we displayed all the numbers
+ 1b2:	00 97       	sbiw	r24, 0x00	; 0
+ 1b4:	39 f7       	brne	.-50     	; 0x184 <main+0x5a>
+_delay_ms(1);
+
+
+}
+/********************************** Switch check **************************/
+        PORTB=0x70; // enable selcters
+ 1b6:	c8 ba       	out	0x18, r12	; 24
+	DDRA = 0x00; //Make PORTA input
+ 1b8:	1a ba       	out	0x1a, r1	; 26
+	PORTA = 0xFF; //enabling the Pull ups for PORTA
+ 1ba:	1b bb       	out	0x1b, r17	; 27
+ 1bc:	80 91 0a 01 	lds	r24, 0x010A
+ 1c0:	90 91 0b 01 	lds	r25, 0x010B
+ 1c4:	ac e0       	ldi	r26, 0x0C	; 12
+ 1c6:	b1 e0       	ldi	r27, 0x01	; 1
+ 1c8:	61 e0       	ldi	r22, 0x01	; 1
+ 1ca:	70 e0       	ldi	r23, 0x00	; 0
+ 1cc:	40 e0       	ldi	r20, 0x00	; 0
+ 1ce:	50 e0       	ldi	r21, 0x00	; 0
+ 1d0:	08 c0       	rjmp	.+16     	; 0x1e2 <main+0xb8>
+
+
+	int i;
+	for (i=0; i<8 ;i++){					//for loop to help with the if statemtns which check each button through
+ 1d2:	68 30       	cpi	r22, 0x08	; 8
+ 1d4:	71 05       	cpc	r23, r1
+ 1d6:	09 f4       	brne	.+2      	; 0x1da <main+0xb0>
+ 1d8:	3f c0       	rjmp	.+126    	; 0x258 <main+0x12e>
+ 1da:	4f 5f       	subi	r20, 0xFF	; 255
+ 1dc:	5f 4f       	sbci	r21, 0xFF	; 255
+ 1de:	6f 5f       	subi	r22, 0xFF	; 255
+ 1e0:	7f 4f       	sbci	r23, 0xFF	; 255
+		
+//***************************************************************************** 
+//Debounsing check from the first lab, with the edit to make it check for each button, depending on the button number.
+int8_t debounce_switch(uint8_t i) {
+static uint16_t state [8];
+  state[i] = (state[i] << 1) | (! bit_is_clear(PINA, i)) | 0xE000;
+ 1e2:	29 b3       	in	r18, 0x19	; 25
+ 1e4:	ed 91       	ld	r30, X+
+ 1e6:	fc 91       	ld	r31, X
+ 1e8:	11 97       	sbiw	r26, 0x01	; 1
+ 1ea:	ee 0f       	add	r30, r30
+ 1ec:	ff 1f       	adc	r31, r31
+ 1ee:	f0 6e       	ori	r31, 0xE0	; 224
+ 1f0:	30 e0       	ldi	r19, 0x00	; 0
+ 1f2:	04 2e       	mov	r0, r20
+ 1f4:	02 c0       	rjmp	.+4      	; 0x1fa <main+0xd0>
+ 1f6:	35 95       	asr	r19
+ 1f8:	27 95       	ror	r18
+ 1fa:	0a 94       	dec	r0
+ 1fc:	e2 f7       	brpl	.-8      	; 0x1f6 <main+0xcc>
+ 1fe:	21 70       	andi	r18, 0x01	; 1
+ 200:	33 27       	eor	r19, r19
+ 202:	2e 2b       	or	r18, r30
+ 204:	3f 2b       	or	r19, r31
+ 206:	2d 93       	st	X+, r18
+ 208:	3d 93       	st	X+, r19
+  if (state[i]== 0xF000) return 1;
+ 20a:	21 15       	cp	r18, r1
+ 20c:	30 4f       	sbci	r19, 0xF0	; 240
+ 20e:	09 f7       	brne	.-62     	; 0x1d2 <main+0xa8>
+
+	int i;
+	for (i=0; i<8 ;i++){					//for loop to help with the if statemtns which check each button through
+								//the function provided in the lab 1
+	if (debounce_switch(i)){
+		if(i==0){		
+ 210:	41 15       	cp	r20, r1
+ 212:	51 05       	cpc	r21, r1
+ 214:	09 f4       	brne	.+2      	; 0x218 <main+0xee>
+ 216:	47 c0       	rjmp	.+142    	; 0x2a6 <main+0x17c>
+
+		current_number =current_number+1;
+		}
+		else if (i==1){		
+ 218:	41 30       	cpi	r20, 0x01	; 1
+ 21a:	51 05       	cpc	r21, r1
+ 21c:	09 f4       	brne	.+2      	; 0x220 <main+0xf6>
+ 21e:	60 c0       	rjmp	.+192    	; 0x2e0 <main+0x1b6>
+		current_number =current_number+2;		
+	}
+		else if(i==2){		
+ 220:	42 30       	cpi	r20, 0x02	; 2
+ 222:	51 05       	cpc	r21, r1
+ 224:	09 f4       	brne	.+2      	; 0x228 <main+0xfe>
+ 226:	68 c0       	rjmp	.+208    	; 0x2f8 <main+0x1ce>
+		current_number =current_number+4;
+	}
+		else if(i==3){		
+ 228:	43 30       	cpi	r20, 0x03	; 3
+ 22a:	51 05       	cpc	r21, r1
+ 22c:	09 f4       	brne	.+2      	; 0x230 <main+0x106>
+ 22e:	5e c0       	rjmp	.+188    	; 0x2ec <main+0x1c2>
+		current_number =current_number+8;
+	}
+		else if(i==4){		
+ 230:	44 30       	cpi	r20, 0x04	; 4
+ 232:	51 05       	cpc	r21, r1
+ 234:	09 f4       	brne	.+2      	; 0x238 <main+0x10e>
+ 236:	47 c0       	rjmp	.+142    	; 0x2c6 <main+0x19c>
+		current_number =current_number+16;
+	}
+		else if(i==5){		
+ 238:	45 30       	cpi	r20, 0x05	; 5
+ 23a:	51 05       	cpc	r21, r1
+ 23c:	f1 f1       	breq	.+124    	; 0x2ba <main+0x190>
+		current_number =current_number+32;
+	}
+		else if(i==6){		
+ 23e:	46 30       	cpi	r20, 0x06	; 6
+ 240:	51 05       	cpc	r21, r1
+ 242:	09 f4       	brne	.+2      	; 0x246 <main+0x11c>
+ 244:	46 c0       	rjmp	.+140    	; 0x2d2 <main+0x1a8>
+		current_number =current_number+64;
+	}
+		else if(i==7){		
+		current_number =current_number+128;
+ 246:	80 58       	subi	r24, 0x80	; 128
+ 248:	9f 4f       	sbci	r25, 0xFF	; 255
+ 24a:	90 93 0b 01 	sts	0x010B, r25
+ 24e:	80 93 0a 01 	sts	0x010A, r24
+	DDRA = 0x00; //Make PORTA input
+	PORTA = 0xFF; //enabling the Pull ups for PORTA
+
+
+	int i;
+	for (i=0; i<8 ;i++){					//for loop to help with the if statemtns which check each button through
+ 252:	68 30       	cpi	r22, 0x08	; 8
+ 254:	71 05       	cpc	r23, r1
+ 256:	09 f6       	brne	.-126    	; 0x1da <main+0xb0>
+  return 0;
+}
+/**************check if we reached 1023******************/
+void check(){
+
+if(current_number >1023){
+ 258:	81 15       	cp	r24, r1
+ 25a:	24 e0       	ldi	r18, 0x04	; 4
+ 25c:	92 07       	cpc	r25, r18
+ 25e:	0c f4       	brge	.+2      	; 0x262 <main+0x138>
+ 260:	82 cf       	rjmp	.-252    	; 0x166 <main+0x3c>
+	current_number=1;
+ 262:	90 92 0b 01 	sts	0x010B, r9
+ 266:	80 92 0a 01 	sts	0x010A, r8
+ 26a:	31 e0       	ldi	r19, 0x01	; 1
+ 26c:	20 e0       	ldi	r18, 0x00	; 0
+ 26e:	79 cf       	rjmp	.-270    	; 0x162 <main+0x38>
+PORTB=0x00;					//Goto digit zero
+PORTA=0xFF;					//if i dont do this, sometimes there is lite light from the prevoius number
+PORTA= dec_to_7seg[current_number_copy % 10];	//Here is when we get the least number to the right, and from the array we know its encoding
+current_number_copy=current_number_copy/10; //divide the number by 10 to get rid of the number we just put in digit zero
+}
+else if(digit==1){		//All the rest code follow the same logic as the prevoius if statment
+ 270:	21 30       	cpi	r18, 0x01	; 1
+ 272:	31 05       	cpc	r19, r1
+ 274:	79 f0       	breq	.+30     	; 0x294 <main+0x16a>
+PORTB= 0x10;
+PORTA=0xFF;
+PORTA= dec_to_7seg[current_number_copy % 10];
+current_number_copy=current_number_copy/10; 
+}
+else if(digit==2){
+ 276:	22 30       	cpi	r18, 0x02	; 2
+ 278:	31 05       	cpc	r19, r1
+ 27a:	79 f0       	breq	.+30     	; 0x29a <main+0x170>
+PORTB=0x30;
+PORTA=0xFF;
+PORTA= dec_to_7seg[current_number_copy % 10];
+current_number_copy=current_number_copy/10; 
+}
+else if(digit==3){
+ 27c:	23 30       	cpi	r18, 0x03	; 3
+ 27e:	31 05       	cpc	r19, r1
+ 280:	79 f0       	breq	.+30     	; 0x2a0 <main+0x176>
+PORTA= dec_to_7seg[current_number_copy % 10];
+current_number_copy=current_number_copy/10; 
+
+}
+
+digit=digit+1;
+ 282:	2f 5f       	subi	r18, 0xFF	; 255
+ 284:	3f 4f       	sbci	r19, 0xFF	; 255
+ 286:	ef e9       	ldi	r30, 0x9F	; 159
+ 288:	ff e0       	ldi	r31, 0x0F	; 15
+ 28a:	31 97       	sbiw	r30, 0x01	; 1
+ 28c:	f1 f7       	brne	.-4      	; 0x28a <main+0x160>
+ 28e:	00 c0       	rjmp	.+0      	; 0x290 <main+0x166>
+ 290:	00 00       	nop
+ 292:	78 cf       	rjmp	.-272    	; 0x184 <main+0x5a>
+PORTA= dec_to_7seg[current_number_copy % 10];	//Here is when we get the least number to the right, and from the array we know its encoding
+current_number_copy=current_number_copy/10; //divide the number by 10 to get rid of the number we just put in digit zero
+}
+else if(digit==1){		//All the rest code follow the same logic as the prevoius if statment
+
+PORTB=0x00;
+ 294:	18 ba       	out	0x18, r1	; 24
+PORTB= 0x10;
+ 296:	08 bb       	out	0x18, r16	; 24
+ 298:	7a cf       	rjmp	.-268    	; 0x18e <main+0x64>
+PORTA= dec_to_7seg[current_number_copy % 10];
+current_number_copy=current_number_copy/10; 
+}
+else if(digit==2){
+
+PORTB=0x00;
+ 29a:	18 ba       	out	0x18, r1	; 24
+PORTB=0x30;
+ 29c:	f8 ba       	out	0x18, r15	; 24
+ 29e:	77 cf       	rjmp	.-274    	; 0x18e <main+0x64>
+PORTA= dec_to_7seg[current_number_copy % 10];
+current_number_copy=current_number_copy/10; 
+}
+else if(digit==3){
+
+PORTB=0x00;
+ 2a0:	18 ba       	out	0x18, r1	; 24
+PORTB= 0x40;
+ 2a2:	d8 ba       	out	0x18, r13	; 24
+ 2a4:	74 cf       	rjmp	.-280    	; 0x18e <main+0x64>
+	for (i=0; i<8 ;i++){					//for loop to help with the if statemtns which check each button through
+								//the function provided in the lab 1
+	if (debounce_switch(i)){
+		if(i==0){		
+
+		current_number =current_number+1;
+ 2a6:	01 96       	adiw	r24, 0x01	; 1
+ 2a8:	90 93 0b 01 	sts	0x010B, r25
+ 2ac:	80 93 0a 01 	sts	0x010A, r24
+ 2b0:	80 91 0a 01 	lds	r24, 0x010A
+ 2b4:	90 91 0b 01 	lds	r25, 0x010B
+ 2b8:	90 cf       	rjmp	.-224    	; 0x1da <main+0xb0>
+	}
+		else if(i==4){		
+		current_number =current_number+16;
+	}
+		else if(i==5){		
+		current_number =current_number+32;
+ 2ba:	80 96       	adiw	r24, 0x20	; 32
+ 2bc:	90 93 0b 01 	sts	0x010B, r25
+ 2c0:	80 93 0a 01 	sts	0x010A, r24
+ 2c4:	f5 cf       	rjmp	.-22     	; 0x2b0 <main+0x186>
+	}
+		else if(i==3){		
+		current_number =current_number+8;
+	}
+		else if(i==4){		
+		current_number =current_number+16;
+ 2c6:	40 96       	adiw	r24, 0x10	; 16
+ 2c8:	90 93 0b 01 	sts	0x010B, r25
+ 2cc:	80 93 0a 01 	sts	0x010A, r24
+ 2d0:	ef cf       	rjmp	.-34     	; 0x2b0 <main+0x186>
+	}
+		else if(i==5){		
+		current_number =current_number+32;
+	}
+		else if(i==6){		
+		current_number =current_number+64;
+ 2d2:	80 5c       	subi	r24, 0xC0	; 192
+ 2d4:	9f 4f       	sbci	r25, 0xFF	; 255
+ 2d6:	90 93 0b 01 	sts	0x010B, r25
+ 2da:	80 93 0a 01 	sts	0x010A, r24
+ 2de:	e8 cf       	rjmp	.-48     	; 0x2b0 <main+0x186>
+		if(i==0){		
+
+		current_number =current_number+1;
+		}
+		else if (i==1){		
+		current_number =current_number+2;		
+ 2e0:	02 96       	adiw	r24, 0x02	; 2
+ 2e2:	90 93 0b 01 	sts	0x010B, r25
+ 2e6:	80 93 0a 01 	sts	0x010A, r24
+ 2ea:	e2 cf       	rjmp	.-60     	; 0x2b0 <main+0x186>
+	}
+		else if(i==2){		
+		current_number =current_number+4;
+	}
+		else if(i==3){		
+		current_number =current_number+8;
+ 2ec:	08 96       	adiw	r24, 0x08	; 8
+ 2ee:	90 93 0b 01 	sts	0x010B, r25
+ 2f2:	80 93 0a 01 	sts	0x010A, r24
+ 2f6:	dc cf       	rjmp	.-72     	; 0x2b0 <main+0x186>
+		}
+		else if (i==1){		
+		current_number =current_number+2;		
+	}
+		else if(i==2){		
+		current_number =current_number+4;
+ 2f8:	04 96       	adiw	r24, 0x04	; 4
+ 2fa:	90 93 0b 01 	sts	0x010B, r25
+ 2fe:	80 93 0a 01 	sts	0x010A, r24
+ 302:	d6 cf       	rjmp	.-84     	; 0x2b0 <main+0x186>
+
+00000304 <__divmodhi4>:
+ 304:	97 fb       	bst	r25, 7
+ 306:	07 2e       	mov	r0, r23
+ 308:	16 f4       	brtc	.+4      	; 0x30e <__divmodhi4+0xa>
+ 30a:	00 94       	com	r0
+ 30c:	07 d0       	rcall	.+14     	; 0x31c <__divmodhi4_neg1>
+ 30e:	77 fd       	sbrc	r23, 7
+ 310:	09 d0       	rcall	.+18     	; 0x324 <__divmodhi4_neg2>
+ 312:	0e 94 96 01 	call	0x32c	; 0x32c <__udivmodhi4>
+ 316:	07 fc       	sbrc	r0, 7
+ 318:	05 d0       	rcall	.+10     	; 0x324 <__divmodhi4_neg2>
+ 31a:	3e f4       	brtc	.+14     	; 0x32a <__divmodhi4_exit>
+
+0000031c <__divmodhi4_neg1>:
+ 31c:	90 95       	com	r25
+ 31e:	81 95       	neg	r24
+ 320:	9f 4f       	sbci	r25, 0xFF	; 255
+ 322:	08 95       	ret
+
+00000324 <__divmodhi4_neg2>:
+ 324:	70 95       	com	r23
+ 326:	61 95       	neg	r22
+ 328:	7f 4f       	sbci	r23, 0xFF	; 255
+
+0000032a <__divmodhi4_exit>:
+ 32a:	08 95       	ret
+
+0000032c <__udivmodhi4>:
+ 32c:	aa 1b       	sub	r26, r26
+ 32e:	bb 1b       	sub	r27, r27
+ 330:	51 e1       	ldi	r21, 0x11	; 17
+ 332:	07 c0       	rjmp	.+14     	; 0x342 <__udivmodhi4_ep>
+
+00000334 <__udivmodhi4_loop>:
+ 334:	aa 1f       	adc	r26, r26
+ 336:	bb 1f       	adc	r27, r27
+ 338:	a6 17       	cp	r26, r22
+ 33a:	b7 07       	cpc	r27, r23
+ 33c:	10 f0       	brcs	.+4      	; 0x342 <__udivmodhi4_ep>
+ 33e:	a6 1b       	sub	r26, r22
+ 340:	b7 0b       	sbc	r27, r23
+
+00000342 <__udivmodhi4_ep>:
+ 342:	88 1f       	adc	r24, r24
+ 344:	99 1f       	adc	r25, r25
+ 346:	5a 95       	dec	r21
+ 348:	a9 f7       	brne	.-22     	; 0x334 <__udivmodhi4_loop>
+ 34a:	80 95       	com	r24
+ 34c:	90 95       	com	r25
+ 34e:	bc 01       	movw	r22, r24
+ 350:	cd 01       	movw	r24, r26
+ 352:	08 95       	ret
+
+00000354 <_exit>:
+ 354:	f8 94       	cli
+
+00000356 <__stop_program>:
+ 356:	ff cf       	rjmp	.-2      	; 0x356 <__stop_program>

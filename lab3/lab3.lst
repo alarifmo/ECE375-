@@ -1,0 +1,1250 @@
+
+lab3.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000024  00800100  0000070a  0000079e  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000070a  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000016  00800124  00800124  000007c2  2**0
+                  ALLOC
+  3 .stab         00000e64  00000000  00000000  000007c4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00000df9  00000000  00000000  00001628  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .comment      00000011  00000000  00000000  00002421  2**0
+                  CONTENTS, READONLY
+  6 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00002434  2**2
+                  CONTENTS, READONLY
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   8:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  10:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  14:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  18:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  1c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  20:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  24:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  28:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  2c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  30:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  34:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  38:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  3c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  40:	0c 94 df 00 	jmp	0x1be	; 0x1be <__vector_16>
+  44:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  48:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  4c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  50:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  54:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  58:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  5c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  60:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  64:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  68:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  6c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  70:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  74:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  78:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  7c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  80:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  84:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  88:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e1       	ldi	r29, 0x10	; 16
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	ea e0       	ldi	r30, 0x0A	; 10
+  a0:	f7 e0       	ldi	r31, 0x07	; 7
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a4 32       	cpi	r26, 0x24	; 36
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+  b2:	21 e0       	ldi	r18, 0x01	; 1
+  b4:	a4 e2       	ldi	r26, 0x24	; 36
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	aa 33       	cpi	r26, 0x3A	; 58
+  be:	b2 07       	cpc	r27, r18
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	0e 94 47 03 	call	0x68e	; 0x68e <main>
+  c6:	0c 94 83 03 	jmp	0x706	; 0x706 <_exit>
+
+000000ca <__bad_interrupt>:
+  ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ce <display_digits>:
+	0b00010000, //center colon
+	0b01110000  //hi-Z mode
+};
+/****************/
+void display_digits() 
+{
+  ce:	cf 93       	push	r28
+  d0:	df 93       	push	r29
+	uint16_t tmp = counter; //tmp variable to modify number for display
+  d2:	40 91 36 01 	lds	r20, 0x0136
+  d6:	50 91 37 01 	lds	r21, 0x0137
+	uint8_t cur_value; //current digit value to display
+	uint8_t cur_digit = 0; //current digit to display on
+
+	//Set Register A
+	DDRA = 0xFF; //output
+  da:	8f ef       	ldi	r24, 0xFF	; 255
+  dc:	8a bb       	out	0x1a, r24	; 26
+	PORTA = 0xFF; //pullups
+  de:	8b bb       	out	0x1b, r24	; 27
+/****************/
+void display_digits() 
+{
+	uint16_t tmp = counter; //tmp variable to modify number for display
+	uint8_t cur_value; //current digit value to display
+	uint8_t cur_digit = 0; //current digit to display on
+  e0:	c0 e0       	ldi	r28, 0x00	; 0
+	 * is less than 1. */
+	do {
+		cur_value = tmp % 10; //get current digit to display
+		PORTB=0x00;
+		PORTB |= decoder_select[cur_digit]; //set portb decoder bits
+		PORTA = 0xFF; //clear PORTA
+  e2:	df ef       	ldi	r29, 0xFF	; 255
+	/* Loop displays each base 10 digit one by one. Mods by 10 to get digit, displays
+	 * encoded digit to 7-seg, divides by 10 to get next digit. Loops until cur_value
+	 * is less than 1. */
+	do {
+		cur_value = tmp % 10; //get current digit to display
+		PORTB=0x00;
+  e4:	18 ba       	out	0x18, r1	; 24
+		PORTB |= decoder_select[cur_digit]; //set portb decoder bits
+  e6:	98 b3       	in	r25, 0x18	; 24
+  e8:	ec 2f       	mov	r30, r28
+  ea:	f0 e0       	ldi	r31, 0x00	; 0
+  ec:	e0 50       	subi	r30, 0x00	; 0
+  ee:	ff 4f       	sbci	r31, 0xFF	; 255
+  f0:	80 81       	ld	r24, Z
+  f2:	89 2b       	or	r24, r25
+  f4:	88 bb       	out	0x18, r24	; 24
+		PORTA = 0xFF; //clear PORTA
+  f6:	db bb       	out	0x1b, r29	; 27
+
+	/* Loop displays each base 10 digit one by one. Mods by 10 to get digit, displays
+	 * encoded digit to 7-seg, divides by 10 to get next digit. Loops until cur_value
+	 * is less than 1. */
+	do {
+		cur_value = tmp % 10; //get current digit to display
+  f8:	9a 01       	movw	r18, r20
+  fa:	ad ec       	ldi	r26, 0xCD	; 205
+  fc:	bc ec       	ldi	r27, 0xCC	; 204
+  fe:	0e 94 74 03 	call	0x6e8	; 0x6e8 <__umulhisi3>
+ 102:	96 95       	lsr	r25
+ 104:	87 95       	ror	r24
+ 106:	96 95       	lsr	r25
+ 108:	87 95       	ror	r24
+ 10a:	96 95       	lsr	r25
+ 10c:	87 95       	ror	r24
+ 10e:	bc 01       	movw	r22, r24
+ 110:	66 0f       	add	r22, r22
+ 112:	77 1f       	adc	r23, r23
+ 114:	9c 01       	movw	r18, r24
+ 116:	22 0f       	add	r18, r18
+ 118:	33 1f       	adc	r19, r19
+ 11a:	22 0f       	add	r18, r18
+ 11c:	33 1f       	adc	r19, r19
+ 11e:	22 0f       	add	r18, r18
+ 120:	33 1f       	adc	r19, r19
+ 122:	26 0f       	add	r18, r22
+ 124:	37 1f       	adc	r19, r23
+ 126:	42 1b       	sub	r20, r18
+ 128:	53 0b       	sbc	r21, r19
+		PORTB=0x00;
+		PORTB |= decoder_select[cur_digit]; //set portb decoder bits
+		PORTA = 0xFF; //clear PORTA
+		PORTA = sev_seg_digits[cur_value]; //display digit
+ 12a:	fa 01       	movw	r30, r20
+ 12c:	ea 5e       	subi	r30, 0xEA	; 234
+ 12e:	fe 4f       	sbci	r31, 0xFE	; 254
+ 130:	20 81       	ld	r18, Z
+ 132:	2b bb       	out	0x1b, r18	; 27
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 134:	e1 ee       	ldi	r30, 0xE1	; 225
+ 136:	f4 e0       	ldi	r31, 0x04	; 4
+ 138:	31 97       	sbiw	r30, 0x01	; 1
+ 13a:	f1 f7       	brne	.-4      	; 0x138 <display_digits+0x6a>
+ 13c:	00 c0       	rjmp	.+0      	; 0x13e <display_digits+0x70>
+ 13e:	00 00       	nop
+		_delay_ms(5);
+		cur_digit++; //next digit
+ 140:	cf 5f       	subi	r28, 0xFF	; 255
+		tmp /= 10; //get next value
+ 142:	ac 01       	movw	r20, r24
+	} while (tmp >= 1);
+ 144:	89 2b       	or	r24, r25
+ 146:	71 f6       	brne	.-100    	; 0xe4 <display_digits+0x16>
+
+	PORTB = 0x60; //switch encoder output to unused bit to remove ghosting
+ 148:	80 e6       	ldi	r24, 0x60	; 96
+ 14a:	88 bb       	out	0x18, r24	; 24
+}
+ 14c:	df 91       	pop	r29
+ 14e:	cf 91       	pop	r28
+ 150:	08 95       	ret
+
+00000152 <display_digits_hex>:
+/********************************************************************/
+void display_digits_hex() 
+{
+	uint16_t tmp = counter; //tmp variable to modify number for display
+ 152:	80 91 36 01 	lds	r24, 0x0136
+ 156:	90 91 37 01 	lds	r25, 0x0137
+	uint8_t cur_value; //current digit value to display
+	uint8_t cur_digit = 0; //current digit to display on
+
+	//Set Register A
+	DDRA = 0xFF; //output
+ 15a:	2f ef       	ldi	r18, 0xFF	; 255
+ 15c:	2a bb       	out	0x1a, r18	; 26
+	PORTA = 0xFF; //pullups
+ 15e:	2b bb       	out	0x1b, r18	; 27
+/********************************************************************/
+void display_digits_hex() 
+{
+	uint16_t tmp = counter; //tmp variable to modify number for display
+	uint8_t cur_value; //current digit value to display
+	uint8_t cur_digit = 0; //current digit to display on
+ 160:	30 e0       	ldi	r19, 0x00	; 0
+
+
+		cur_value = tmp % 16; //get current digit to display
+		PORTB=0x00;
+		PORTB |= decoder_select[cur_digit]; //set portb decoder bits
+		PORTA = 0xFF; //clear PORTA
+ 162:	5f ef       	ldi	r21, 0xFF	; 255
+
+	
+
+
+		cur_value = tmp % 16; //get current digit to display
+		PORTB=0x00;
+ 164:	18 ba       	out	0x18, r1	; 24
+		PORTB |= decoder_select[cur_digit]; //set portb decoder bits
+ 166:	48 b3       	in	r20, 0x18	; 24
+ 168:	e3 2f       	mov	r30, r19
+ 16a:	f0 e0       	ldi	r31, 0x00	; 0
+ 16c:	e0 50       	subi	r30, 0x00	; 0
+ 16e:	ff 4f       	sbci	r31, 0xFF	; 255
+ 170:	20 81       	ld	r18, Z
+ 172:	24 2b       	or	r18, r20
+ 174:	28 bb       	out	0x18, r18	; 24
+		PORTA = 0xFF; //clear PORTA
+ 176:	5b bb       	out	0x1b, r21	; 27
+	do {
+
+	
+
+
+		cur_value = tmp % 16; //get current digit to display
+ 178:	e8 2f       	mov	r30, r24
+ 17a:	ef 70       	andi	r30, 0x0F	; 15
+		PORTB=0x00;
+		PORTB |= decoder_select[cur_digit]; //set portb decoder bits
+		PORTA = 0xFF; //clear PORTA
+		PORTA = sev_seg_digits_hex[cur_value]; //display digit
+ 17c:	f0 e0       	ldi	r31, 0x00	; 0
+ 17e:	ea 5f       	subi	r30, 0xFA	; 250
+ 180:	fe 4f       	sbci	r31, 0xFE	; 254
+ 182:	20 81       	ld	r18, Z
+ 184:	2b bb       	out	0x1b, r18	; 27
+ 186:	e1 ee       	ldi	r30, 0xE1	; 225
+ 188:	f4 e0       	ldi	r31, 0x04	; 4
+ 18a:	31 97       	sbiw	r30, 0x01	; 1
+ 18c:	f1 f7       	brne	.-4      	; 0x18a <display_digits_hex+0x38>
+ 18e:	00 c0       	rjmp	.+0      	; 0x190 <display_digits_hex+0x3e>
+ 190:	00 00       	nop
+		_delay_ms(5);
+		cur_digit++; //next digit
+ 192:	3f 5f       	subi	r19, 0xFF	; 255
+		tmp /= 16; //get next value
+ 194:	92 95       	swap	r25
+ 196:	82 95       	swap	r24
+ 198:	8f 70       	andi	r24, 0x0F	; 15
+ 19a:	89 27       	eor	r24, r25
+ 19c:	9f 70       	andi	r25, 0x0F	; 15
+ 19e:	89 27       	eor	r24, r25
+	} while (tmp >= 1);
+ 1a0:	00 97       	sbiw	r24, 0x00	; 0
+ 1a2:	01 f7       	brne	.-64     	; 0x164 <display_digits_hex+0x12>
+	PORTB = 0x20;
+ 1a4:	80 e2       	ldi	r24, 0x20	; 32
+ 1a6:	88 bb       	out	0x18, r24	; 24
+	PORTA = 0b11111011;
+ 1a8:	8b ef       	ldi	r24, 0xFB	; 251
+ 1aa:	8b bb       	out	0x1b, r24	; 27
+ 1ac:	81 ee       	ldi	r24, 0xE1	; 225
+ 1ae:	94 e0       	ldi	r25, 0x04	; 4
+ 1b0:	01 97       	sbiw	r24, 0x01	; 1
+ 1b2:	f1 f7       	brne	.-4      	; 0x1b0 <display_digits_hex+0x5e>
+ 1b4:	00 c0       	rjmp	.+0      	; 0x1b6 <display_digits_hex+0x64>
+ 1b6:	00 00       	nop
+	_delay_ms(5);
+	PORTB = 0x60; //switch encoder output to unused bit to remove ghosting
+ 1b8:	80 e6       	ldi	r24, 0x60	; 96
+ 1ba:	88 bb       	out	0x18, r24	; 24
+ 1bc:	08 95       	ret
+
+000001be <__vector_16>:
+
+/**************************/
+
+
+
+ISR(TIMER0_OVF_vect){
+ 1be:	1f 92       	push	r1
+ 1c0:	0f 92       	push	r0
+ 1c2:	0f b6       	in	r0, 0x3f	; 63
+ 1c4:	0f 92       	push	r0
+ 1c6:	11 24       	eor	r1, r1
+ 1c8:	0b b6       	in	r0, 0x3b	; 59
+ 1ca:	0f 92       	push	r0
+ 1cc:	2f 93       	push	r18
+ 1ce:	3f 93       	push	r19
+ 1d0:	4f 93       	push	r20
+ 1d2:	5f 93       	push	r21
+ 1d4:	6f 93       	push	r22
+ 1d6:	7f 93       	push	r23
+ 1d8:	8f 93       	push	r24
+ 1da:	9f 93       	push	r25
+ 1dc:	ef 93       	push	r30
+ 1de:	ff 93       	push	r31
+
+
+  DDRA = 0x00; //make PORTA as an input
+ 1e0:	1a ba       	out	0x1a, r1	; 26
+  PORTA = 0xFF; // pull ups
+ 1e2:	8f ef       	ldi	r24, 0xFF	; 255
+ 1e4:	8b bb       	out	0x1b, r24	; 27
+  PORTB=0x70;
+ 1e6:	80 e7       	ldi	r24, 0x70	; 112
+ 1e8:	88 bb       	out	0x18, r24	; 24
+ 1ea:	89 ef       	ldi	r24, 0xF9	; 249
+ 1ec:	90 e0       	ldi	r25, 0x00	; 0
+ 1ee:	01 97       	sbiw	r24, 0x01	; 1
+ 1f0:	f1 f7       	brne	.-4      	; 0x1ee <__vector_16+0x30>
+ 1f2:	00 c0       	rjmp	.+0      	; 0x1f4 <__vector_16+0x36>
+ 1f4:	00 00       	nop
+
+  _delay_ms(1); 
+
+ //sinc there is pull ups so the value of PORTA will be deducted from 0xff
+  if(PINA != NotTouched){ 
+ 1f6:	29 b3       	in	r18, 0x19	; 25
+ 1f8:	80 91 22 01 	lds	r24, 0x0122
+ 1fc:	90 91 23 01 	lds	r25, 0x0123
+ 200:	30 e0       	ldi	r19, 0x00	; 0
+ 202:	28 17       	cp	r18, r24
+ 204:	39 07       	cpc	r19, r25
+ 206:	09 f4       	brne	.+2      	; 0x20a <__vector_16+0x4c>
+ 208:	c0 c0       	rjmp	.+384    	; 0x38a <__vector_16+0x1cc>
+    if(nothing){
+ 20a:	20 91 20 01 	lds	r18, 0x0120
+ 20e:	30 91 21 01 	lds	r19, 0x0121
+ 212:	23 2b       	or	r18, r19
+ 214:	09 f4       	brne	.+2      	; 0x218 <__vector_16+0x5a>
+ 216:	83 c0       	rjmp	.+262    	; 0x31e <__vector_16+0x160>
+      /***************************/
+	uint8_t checker =NotTouched-  PINA;
+ 218:	99 b3       	in	r25, 0x19	; 25
+ 21a:	89 1b       	sub	r24, r25
+  switch(checker){
+ 21c:	82 30       	cpi	r24, 0x02	; 2
+ 21e:	09 f4       	brne	.+2      	; 0x222 <__vector_16+0x64>
+ 220:	45 c1       	rjmp	.+650    	; 0x4ac <__vector_16+0x2ee>
+ 222:	84 30       	cpi	r24, 0x04	; 4
+ 224:	09 f4       	brne	.+2      	; 0x228 <__vector_16+0x6a>
+ 226:	34 c1       	rjmp	.+616    	; 0x490 <__vector_16+0x2d2>
+ 228:	81 30       	cpi	r24, 0x01	; 1
+ 22a:	09 f4       	brne	.+2      	; 0x22e <__vector_16+0x70>
+ 22c:	57 c1       	rjmp	.+686    	; 0x4dc <__vector_16+0x31e>
+		}
+
+
+  }
+	
+        nothing = 0; 
+ 22e:	10 92 21 01 	sts	0x0121, r1
+ 232:	10 92 20 01 	sts	0x0120, r1
+
+
+
+
+
+    SavedPORTA_Value = PINA;
+ 236:	89 b3       	in	r24, 0x19	; 25
+ 238:	90 e0       	ldi	r25, 0x00	; 0
+ 23a:	90 93 31 01 	sts	0x0131, r25
+ 23e:	80 93 30 01 	sts	0x0130, r24
+  else {
+    nothing = 1;  
+  }
+
+ 
+	DDRA = 0xFF; 
+ 242:	8f ef       	ldi	r24, 0xFF	; 255
+ 244:	8a bb       	out	0x1a, r24	; 26
+ 
+	PORTB =0x70;  
+ 246:	80 e7       	ldi	r24, 0x70	; 112
+ 248:	88 bb       	out	0x18, r24	; 24
+
+
+	
+
+	PORTE =0x00;
+ 24a:	13 b8       	out	0x03, r1	; 3
+	PORTE =0x80;  
+ 24c:	80 e8       	ldi	r24, 0x80	; 128
+ 24e:	83 b9       	out	0x03, r24	; 3
+ 250:	83 ef       	ldi	r24, 0xF3	; 243
+ 252:	91 e0       	ldi	r25, 0x01	; 1
+ 254:	01 97       	sbiw	r24, 0x01	; 1
+ 256:	f1 f7       	brne	.-4      	; 0x254 <__vector_16+0x96>
+ 258:	00 c0       	rjmp	.+0      	; 0x25a <__vector_16+0x9c>
+ 25a:	00 00       	nop
+ 
+	_delay_ms(2);
+
+
+  SPDR = BARAGRAPH;		//SPDR SEND Data so it can receive, and vice versa 
+ 25c:	80 91 2e 01 	lds	r24, 0x012E
+ 260:	8f b9       	out	0x0f, r24	; 15
+  spdr_to_encoder = SPDR;
+ 262:	8f b1       	in	r24, 0x0f	; 15
+ 264:	90 e0       	ldi	r25, 0x00	; 0
+ 266:	90 93 39 01 	sts	0x0139, r25
+ 26a:	80 93 38 01 	sts	0x0138, r24
+
+  
+  while (bit_is_clear(SPSR, SPIF)){};
+ 26e:	77 9b       	sbis	0x0e, 7	; 14
+ 270:	fe cf       	rjmp	.-4      	; 0x26e <__vector_16+0xb0>
+
+
+			//low high
+  PORTE =   0xC0 ;
+ 272:	80 ec       	ldi	r24, 0xC0	; 192
+ 274:	83 b9       	out	0x03, r24	; 3
+  PORTE =   0x40;
+ 276:	80 e4       	ldi	r24, 0x40	; 64
+ 278:	83 b9       	out	0x03, r24	; 3
+
+ 
+  PORTB =  0x71;
+ 27a:	81 e7       	ldi	r24, 0x71	; 113
+ 27c:	88 bb       	out	0x18, r24	; 24
+  PORTB = 0x70;
+ 27e:	80 e7       	ldi	r24, 0x70	; 112
+ 280:	88 bb       	out	0x18, r24	; 24
+
+/***************************************************************************************************************************************************/
+  
+  OE1 = encoder1;
+ 282:	40 91 28 01 	lds	r20, 0x0128
+ 286:	50 91 29 01 	lds	r21, 0x0129
+ 28a:	50 93 2d 01 	sts	0x012D, r21
+ 28e:	40 93 2c 01 	sts	0x012C, r20
+  OE2 = encoder2;
+ 292:	20 91 26 01 	lds	r18, 0x0126
+ 296:	30 91 27 01 	lds	r19, 0x0127
+ 29a:	30 93 2b 01 	sts	0x012B, r19
+ 29e:	20 93 2a 01 	sts	0x012A, r18
+
+  
+
+  encoder1 =  (spdr_to_encoder & 0x03);
+ 2a2:	80 91 38 01 	lds	r24, 0x0138
+ 2a6:	90 91 39 01 	lds	r25, 0x0139
+ 2aa:	bc 01       	movw	r22, r24
+ 2ac:	63 70       	andi	r22, 0x03	; 3
+ 2ae:	77 27       	eor	r23, r23
+ 2b0:	70 93 29 01 	sts	0x0129, r23
+ 2b4:	60 93 28 01 	sts	0x0128, r22
+  encoder2 = ((spdr_to_encoder& 0x0C) >> 2);
+ 2b8:	8c 70       	andi	r24, 0x0C	; 12
+ 2ba:	99 27       	eor	r25, r25
+ 2bc:	96 95       	lsr	r25
+ 2be:	87 95       	ror	r24
+ 2c0:	96 95       	lsr	r25
+ 2c2:	87 95       	ror	r24
+ 2c4:	90 93 27 01 	sts	0x0127, r25
+ 2c8:	80 93 26 01 	sts	0x0126, r24
+
+  
+  if(encoder1 != OE1){
+ 2cc:	46 17       	cp	r20, r22
+ 2ce:	57 07       	cpc	r21, r23
+ 2d0:	41 f0       	breq	.+16     	; 0x2e2 <__vector_16+0x124>
+    if((OE1 == 0x01) && (encoder1 == 0x03)){
+ 2d2:	41 30       	cpi	r20, 0x01	; 1
+ 2d4:	51 05       	cpc	r21, r1
+ 2d6:	09 f4       	brne	.+2      	; 0x2da <__vector_16+0x11c>
+ 2d8:	9d c0       	rjmp	.+314    	; 0x414 <__vector_16+0x256>
+    	counter =counter+ 4;
+  	else
+    	counter = counter+1;
+    
+	}
+    if((OE1 == 0x02) && (encoder1 == 0x03)){      
+ 2da:	42 30       	cpi	r20, 0x02	; 2
+ 2dc:	51 05       	cpc	r21, r1
+ 2de:	09 f4       	brne	.+2      	; 0x2e2 <__vector_16+0x124>
+ 2e0:	79 c0       	rjmp	.+242    	; 0x3d4 <__vector_16+0x216>
+  	else
+    	counter =counter- 1;
+
+	}
+  }
+  if(encoder2 != OE2){
+ 2e2:	28 17       	cp	r18, r24
+ 2e4:	39 07       	cpc	r19, r25
+ 2e6:	51 f0       	breq	.+20     	; 0x2fc <__vector_16+0x13e>
+    if((OE2 == 0x01) && (encoder2 == 0x03)){     
+ 2e8:	21 30       	cpi	r18, 0x01	; 1
+ 2ea:	31 05       	cpc	r19, r1
+ 2ec:	09 f4       	brne	.+2      	; 0x2f0 <__vector_16+0x132>
+ 2ee:	54 c0       	rjmp	.+168    	; 0x398 <__vector_16+0x1da>
+  	else if (bit1)
+    	counter =counter+ 4;
+  	else
+    	counter= counter+1;
+	}
+    if((OE2 == 0x02) && (encoder2 == 0x03)){
+ 2f0:	22 30       	cpi	r18, 0x02	; 2
+ 2f2:	31 05       	cpc	r19, r1
+ 2f4:	19 f4       	brne	.+6      	; 0x2fc <__vector_16+0x13e>
+ 2f6:	03 97       	sbiw	r24, 0x03	; 3
+ 2f8:	09 f4       	brne	.+2      	; 0x2fc <__vector_16+0x13e>
+ 2fa:	ac c0       	rjmp	.+344    	; 0x454 <__vector_16+0x296>
+    	counter = counter-4;
+  	else
+    	counter = counter-1;
+	}
+	}
+}
+ 2fc:	ff 91       	pop	r31
+ 2fe:	ef 91       	pop	r30
+ 300:	9f 91       	pop	r25
+ 302:	8f 91       	pop	r24
+ 304:	7f 91       	pop	r23
+ 306:	6f 91       	pop	r22
+ 308:	5f 91       	pop	r21
+ 30a:	4f 91       	pop	r20
+ 30c:	3f 91       	pop	r19
+ 30e:	2f 91       	pop	r18
+ 310:	0f 90       	pop	r0
+ 312:	0b be       	out	0x3b, r0	; 59
+ 314:	0f 90       	pop	r0
+ 316:	0f be       	out	0x3f, r0	; 63
+ 318:	0f 90       	pop	r0
+ 31a:	1f 90       	pop	r1
+ 31c:	18 95       	reti
+
+  }
+	
+        nothing = 0; 
+    }
+    else if(PINA == SavedPORTA_Value){ //do nothing
+ 31e:	29 b3       	in	r18, 0x19	; 25
+ 320:	40 91 30 01 	lds	r20, 0x0130
+ 324:	50 91 31 01 	lds	r21, 0x0131
+ 328:	30 e0       	ldi	r19, 0x00	; 0
+ 32a:	24 17       	cp	r18, r20
+ 32c:	35 07       	cpc	r19, r21
+ 32e:	09 f4       	brne	.+2      	; 0x332 <__vector_16+0x174>
+ 330:	82 cf       	rjmp	.-252    	; 0x236 <__vector_16+0x78>
+      
+    }
+    else if(PINA != SavedPORTA_Value){
+ 332:	29 b3       	in	r18, 0x19	; 25
+ 334:	30 e0       	ldi	r19, 0x00	; 0
+ 336:	42 17       	cp	r20, r18
+ 338:	53 07       	cpc	r21, r19
+ 33a:	09 f4       	brne	.+2      	; 0x33e <__vector_16+0x180>
+ 33c:	7c cf       	rjmp	.-264    	; 0x236 <__vector_16+0x78>
+   
+      		uint8_t checker =NotTouched-  PINA;
+ 33e:	99 b3       	in	r25, 0x19	; 25
+ 340:	89 1b       	sub	r24, r25
+  switch(checker){
+ 342:	82 30       	cpi	r24, 0x02	; 2
+ 344:	09 f4       	brne	.+2      	; 0x348 <__vector_16+0x18a>
+ 346:	1f c1       	rjmp	.+574    	; 0x586 <__vector_16+0x3c8>
+ 348:	84 30       	cpi	r24, 0x04	; 4
+ 34a:	09 f4       	brne	.+2      	; 0x34e <__vector_16+0x190>
+ 34c:	0e c1       	rjmp	.+540    	; 0x56a <__vector_16+0x3ac>
+ 34e:	81 30       	cpi	r24, 0x01	; 1
+ 350:	09 f0       	breq	.+2      	; 0x354 <__vector_16+0x196>
+ 352:	71 cf       	rjmp	.-286    	; 0x236 <__vector_16+0x78>
+else{ hex=0x00;}
+break;
+
+
+case 0x01:
+	if(bit0==0x00){
+ 354:	80 91 34 01 	lds	r24, 0x0134
+ 358:	90 91 35 01 	lds	r25, 0x0135
+ 35c:	89 2b       	or	r24, r25
+ 35e:	09 f0       	breq	.+2      	; 0x362 <__vector_16+0x1a4>
+ 360:	42 c1       	rjmp	.+644    	; 0x5e6 <__vector_16+0x428>
+		bit0=0x01;
+ 362:	81 e0       	ldi	r24, 0x01	; 1
+ 364:	90 e0       	ldi	r25, 0x00	; 0
+ 366:	90 93 35 01 	sts	0x0135, r25
+ 36a:	80 93 34 01 	sts	0x0134, r24
+		if (BARAGRAPH==0x00){
+ 36e:	80 91 2e 01 	lds	r24, 0x012E
+ 372:	90 91 2f 01 	lds	r25, 0x012F
+ 376:	89 2b       	or	r24, r25
+ 378:	09 f4       	brne	.+2      	; 0x37c <__vector_16+0x1be>
+ 37a:	29 c1       	rjmp	.+594    	; 0x5ce <__vector_16+0x410>
+			BARAGRAPH=0x01;
+		}
+		else{
+			BARAGRAPH=0x03;
+ 37c:	83 e0       	ldi	r24, 0x03	; 3
+ 37e:	90 e0       	ldi	r25, 0x00	; 0
+ 380:	90 93 2f 01 	sts	0x012F, r25
+ 384:	80 93 2e 01 	sts	0x012E, r24
+ 388:	56 cf       	rjmp	.-340    	; 0x236 <__vector_16+0x78>
+
+
+    SavedPORTA_Value = PINA;
+  }
+  else {
+    nothing = 1;  
+ 38a:	81 e0       	ldi	r24, 0x01	; 1
+ 38c:	90 e0       	ldi	r25, 0x00	; 0
+ 38e:	90 93 21 01 	sts	0x0121, r25
+ 392:	80 93 20 01 	sts	0x0120, r24
+ 396:	55 cf       	rjmp	.-342    	; 0x242 <__vector_16+0x84>
+    	counter =counter- 1;
+
+	}
+  }
+  if(encoder2 != OE2){
+    if((OE2 == 0x01) && (encoder2 == 0x03)){     
+ 398:	03 97       	sbiw	r24, 0x03	; 3
+ 39a:	09 f0       	breq	.+2      	; 0x39e <__vector_16+0x1e0>
+ 39c:	af cf       	rjmp	.-162    	; 0x2fc <__vector_16+0x13e>
+	if(bit0 & bit1){
+ 39e:	80 91 34 01 	lds	r24, 0x0134
+ 3a2:	90 91 35 01 	lds	r25, 0x0135
+ 3a6:	20 91 32 01 	lds	r18, 0x0132
+ 3aa:	30 91 33 01 	lds	r19, 0x0133
+ 3ae:	a9 01       	movw	r20, r18
+ 3b0:	48 23       	and	r20, r24
+ 3b2:	59 23       	and	r21, r25
+ 3b4:	45 2b       	or	r20, r21
+ 3b6:	09 f0       	breq	.+2      	; 0x3ba <__vector_16+0x1fc>
+ 3b8:	a1 cf       	rjmp	.-190    	; 0x2fc <__vector_16+0x13e>
+	}
+  	else if (bit0)
+ 3ba:	89 2b       	or	r24, r25
+ 3bc:	09 f4       	brne	.+2      	; 0x3c0 <__vector_16+0x202>
+ 3be:	2d c1       	rjmp	.+602    	; 0x61a <__vector_16+0x45c>
+    	counter = counter+2;
+ 3c0:	80 91 36 01 	lds	r24, 0x0136
+ 3c4:	90 91 37 01 	lds	r25, 0x0137
+ 3c8:	02 96       	adiw	r24, 0x02	; 2
+ 3ca:	90 93 37 01 	sts	0x0137, r25
+ 3ce:	80 93 36 01 	sts	0x0136, r24
+ 3d2:	94 cf       	rjmp	.-216    	; 0x2fc <__vector_16+0x13e>
+    	counter =counter+ 4;
+  	else
+    	counter = counter+1;
+    
+	}
+    if((OE1 == 0x02) && (encoder1 == 0x03)){      
+ 3d4:	63 30       	cpi	r22, 0x03	; 3
+ 3d6:	71 05       	cpc	r23, r1
+ 3d8:	09 f0       	breq	.+2      	; 0x3dc <__vector_16+0x21e>
+ 3da:	83 cf       	rjmp	.-250    	; 0x2e2 <__vector_16+0x124>
+	if(bit0 & bit1){    	
+ 3dc:	40 91 34 01 	lds	r20, 0x0134
+ 3e0:	50 91 35 01 	lds	r21, 0x0135
+ 3e4:	60 91 32 01 	lds	r22, 0x0132
+ 3e8:	70 91 33 01 	lds	r23, 0x0133
+ 3ec:	fb 01       	movw	r30, r22
+ 3ee:	e4 23       	and	r30, r20
+ 3f0:	f5 23       	and	r31, r21
+ 3f2:	ef 2b       	or	r30, r31
+ 3f4:	09 f0       	breq	.+2      	; 0x3f8 <__vector_16+0x23a>
+ 3f6:	75 cf       	rjmp	.-278    	; 0x2e2 <__vector_16+0x124>
+	}
+  	else if (bit0)
+ 3f8:	45 2b       	or	r20, r21
+ 3fa:	09 f4       	brne	.+2      	; 0x3fe <__vector_16+0x240>
+ 3fc:	27 c1       	rjmp	.+590    	; 0x64c <__vector_16+0x48e>
+    	counter =counter- 2;
+ 3fe:	40 91 36 01 	lds	r20, 0x0136
+ 402:	50 91 37 01 	lds	r21, 0x0137
+ 406:	42 50       	subi	r20, 0x02	; 2
+ 408:	51 09       	sbc	r21, r1
+ 40a:	50 93 37 01 	sts	0x0137, r21
+ 40e:	40 93 36 01 	sts	0x0136, r20
+ 412:	67 cf       	rjmp	.-306    	; 0x2e2 <__vector_16+0x124>
+  encoder1 =  (spdr_to_encoder & 0x03);
+  encoder2 = ((spdr_to_encoder& 0x0C) >> 2);
+
+  
+  if(encoder1 != OE1){
+    if((OE1 == 0x01) && (encoder1 == 0x03)){
+ 414:	63 30       	cpi	r22, 0x03	; 3
+ 416:	71 05       	cpc	r23, r1
+ 418:	09 f0       	breq	.+2      	; 0x41c <__vector_16+0x25e>
+ 41a:	63 cf       	rjmp	.-314    	; 0x2e2 <__vector_16+0x124>
+  
+	if(bit0 & bit1){    	
+ 41c:	40 91 34 01 	lds	r20, 0x0134
+ 420:	50 91 35 01 	lds	r21, 0x0135
+ 424:	60 91 32 01 	lds	r22, 0x0132
+ 428:	70 91 33 01 	lds	r23, 0x0133
+ 42c:	fb 01       	movw	r30, r22
+ 42e:	e4 23       	and	r30, r20
+ 430:	f5 23       	and	r31, r21
+ 432:	ef 2b       	or	r30, r31
+ 434:	09 f0       	breq	.+2      	; 0x438 <__vector_16+0x27a>
+ 436:	55 cf       	rjmp	.-342    	; 0x2e2 <__vector_16+0x124>
+	}
+  	else if (bit0)
+ 438:	45 2b       	or	r20, r21
+ 43a:	09 f4       	brne	.+2      	; 0x43e <__vector_16+0x280>
+ 43c:	fa c0       	rjmp	.+500    	; 0x632 <__vector_16+0x474>
+    	counter =counter+ 2;
+ 43e:	40 91 36 01 	lds	r20, 0x0136
+ 442:	50 91 37 01 	lds	r21, 0x0137
+ 446:	4e 5f       	subi	r20, 0xFE	; 254
+ 448:	5f 4f       	sbci	r21, 0xFF	; 255
+ 44a:	50 93 37 01 	sts	0x0137, r21
+ 44e:	40 93 36 01 	sts	0x0136, r20
+ 452:	47 cf       	rjmp	.-370    	; 0x2e2 <__vector_16+0x124>
+    	counter =counter+ 4;
+  	else
+    	counter= counter+1;
+	}
+    if((OE2 == 0x02) && (encoder2 == 0x03)){
+	if(bit0 & bit1){
+ 454:	80 91 34 01 	lds	r24, 0x0134
+ 458:	90 91 35 01 	lds	r25, 0x0135
+ 45c:	20 91 32 01 	lds	r18, 0x0132
+ 460:	30 91 33 01 	lds	r19, 0x0133
+ 464:	a9 01       	movw	r20, r18
+ 466:	48 23       	and	r20, r24
+ 468:	59 23       	and	r21, r25
+ 46a:	45 2b       	or	r20, r21
+ 46c:	09 f0       	breq	.+2      	; 0x470 <__vector_16+0x2b2>
+ 46e:	46 cf       	rjmp	.-372    	; 0x2fc <__vector_16+0x13e>
+	
+	}
+	else if (bit0)
+ 470:	89 2b       	or	r24, r25
+ 472:	09 f0       	breq	.+2      	; 0x476 <__vector_16+0x2b8>
+ 474:	70 c0       	rjmp	.+224    	; 0x556 <__vector_16+0x398>
+    	counter =counter- 2;
+  	else if (bit1)
+    	counter = counter-4;
+ 476:	80 91 36 01 	lds	r24, 0x0136
+ 47a:	90 91 37 01 	lds	r25, 0x0137
+	if(bit0 & bit1){
+	
+	}
+	else if (bit0)
+    	counter =counter- 2;
+  	else if (bit1)
+ 47e:	23 2b       	or	r18, r19
+ 480:	09 f0       	breq	.+2      	; 0x484 <__vector_16+0x2c6>
+ 482:	c5 c0       	rjmp	.+394    	; 0x60e <__vector_16+0x450>
+    	counter = counter-4;
+  	else
+    	counter = counter-1;
+ 484:	01 97       	sbiw	r24, 0x01	; 1
+ 486:	90 93 37 01 	sts	0x0137, r25
+ 48a:	80 93 36 01 	sts	0x0136, r24
+ 48e:	36 cf       	rjmp	.-404    	; 0x2fc <__vector_16+0x13e>
+	uint8_t checker =NotTouched-  PINA;
+  switch(checker){
+
+	
+case 0x04:
+if(hex==0x00){
+ 490:	80 91 24 01 	lds	r24, 0x0124
+ 494:	90 91 25 01 	lds	r25, 0x0125
+ 498:	89 2b       	or	r24, r25
+ 49a:	09 f0       	breq	.+2      	; 0x49e <__vector_16+0x2e0>
+ 49c:	57 c0       	rjmp	.+174    	; 0x54c <__vector_16+0x38e>
+hex=0x01;
+ 49e:	81 e0       	ldi	r24, 0x01	; 1
+ 4a0:	90 e0       	ldi	r25, 0x00	; 0
+ 4a2:	90 93 25 01 	sts	0x0125, r25
+ 4a6:	80 93 24 01 	sts	0x0124, r24
+ 4aa:	c1 ce       	rjmp	.-638    	; 0x22e <__vector_16+0x70>
+	}
+	
+      break;
+    
+case 0x02:
+    if(bit1==0x00){
+ 4ac:	80 91 32 01 	lds	r24, 0x0132
+ 4b0:	90 91 33 01 	lds	r25, 0x0133
+ 4b4:	89 2b       	or	r24, r25
+ 4b6:	e9 f1       	breq	.+122    	; 0x532 <__vector_16+0x374>
+		else{
+			BARAGRAPH=0x03;
+		}		
+	}
+    else{
+     		 bit1 = 0x00;
+ 4b8:	10 92 33 01 	sts	0x0133, r1
+ 4bc:	10 92 32 01 	sts	0x0132, r1
+		if (BARAGRAPH==0x02){
+ 4c0:	80 91 2e 01 	lds	r24, 0x012E
+ 4c4:	90 91 2f 01 	lds	r25, 0x012F
+ 4c8:	02 97       	sbiw	r24, 0x02	; 2
+ 4ca:	09 f4       	brne	.+2      	; 0x4ce <__vector_16+0x310>
+ 4cc:	87 c0       	rjmp	.+270    	; 0x5dc <__vector_16+0x41e>
+
+    case 0x01:
+	if(bit0==0x00){
+		bit0=0x01;
+		if (BARAGRAPH==0x00){
+			BARAGRAPH=0x01;
+ 4ce:	81 e0       	ldi	r24, 0x01	; 1
+ 4d0:	90 e0       	ldi	r25, 0x00	; 0
+ 4d2:	90 93 2f 01 	sts	0x012F, r25
+ 4d6:	80 93 2e 01 	sts	0x012E, r24
+ 4da:	a9 ce       	rjmp	.-686    	; 0x22e <__vector_16+0x70>
+else{ hex=0x00;}
+break;
+
+
+    case 0x01:
+	if(bit0==0x00){
+ 4dc:	80 91 34 01 	lds	r24, 0x0134
+ 4e0:	90 91 35 01 	lds	r25, 0x0135
+ 4e4:	89 2b       	or	r24, r25
+ 4e6:	99 f4       	brne	.+38     	; 0x50e <__vector_16+0x350>
+		bit0=0x01;
+ 4e8:	81 e0       	ldi	r24, 0x01	; 1
+ 4ea:	90 e0       	ldi	r25, 0x00	; 0
+ 4ec:	90 93 35 01 	sts	0x0135, r25
+ 4f0:	80 93 34 01 	sts	0x0134, r24
+		if (BARAGRAPH==0x00){
+ 4f4:	80 91 2e 01 	lds	r24, 0x012E
+ 4f8:	90 91 2f 01 	lds	r25, 0x012F
+ 4fc:	89 2b       	or	r24, r25
+ 4fe:	39 f3       	breq	.-50     	; 0x4ce <__vector_16+0x310>
+			BARAGRAPH=0x01;
+		}
+		else{
+			BARAGRAPH=0x03;
+ 500:	83 e0       	ldi	r24, 0x03	; 3
+ 502:	90 e0       	ldi	r25, 0x00	; 0
+ 504:	90 93 2f 01 	sts	0x012F, r25
+ 508:	80 93 2e 01 	sts	0x012E, r24
+ 50c:	90 ce       	rjmp	.-736    	; 0x22e <__vector_16+0x70>
+		}
+	}
+	else{
+		bit0=0x00;
+ 50e:	10 92 35 01 	sts	0x0135, r1
+ 512:	10 92 34 01 	sts	0x0134, r1
+		if (BARAGRAPH==0x01){
+ 516:	80 91 2e 01 	lds	r24, 0x012E
+ 51a:	90 91 2f 01 	lds	r25, 0x012F
+ 51e:	01 97       	sbiw	r24, 0x01	; 1
+ 520:	09 f4       	brne	.+2      	; 0x524 <__vector_16+0x366>
+ 522:	5c c0       	rjmp	.+184    	; 0x5dc <__vector_16+0x41e>
+			BARAGRAPH=0x00;
+		}
+		else{
+			BARAGRAPH=0x02;
+ 524:	82 e0       	ldi	r24, 0x02	; 2
+ 526:	90 e0       	ldi	r25, 0x00	; 0
+ 528:	90 93 2f 01 	sts	0x012F, r25
+ 52c:	80 93 2e 01 	sts	0x012E, r24
+ 530:	7e ce       	rjmp	.-772    	; 0x22e <__vector_16+0x70>
+	
+      break;
+    
+case 0x02:
+    if(bit1==0x00){
+		bit1=0x01;
+ 532:	81 e0       	ldi	r24, 0x01	; 1
+ 534:	90 e0       	ldi	r25, 0x00	; 0
+ 536:	90 93 33 01 	sts	0x0133, r25
+ 53a:	80 93 32 01 	sts	0x0132, r24
+		if (BARAGRAPH==0x00){
+ 53e:	80 91 2e 01 	lds	r24, 0x012E
+ 542:	90 91 2f 01 	lds	r25, 0x012F
+ 546:	89 2b       	or	r24, r25
+ 548:	69 f3       	breq	.-38     	; 0x524 <__vector_16+0x366>
+ 54a:	da cf       	rjmp	.-76     	; 0x500 <__vector_16+0x342>
+if(hex==0x00){
+hex=0x01;
+
+}
+
+else{ hex=0x00;}
+ 54c:	10 92 25 01 	sts	0x0125, r1
+ 550:	10 92 24 01 	sts	0x0124, r1
+ 554:	6c ce       	rjmp	.-808    	; 0x22e <__vector_16+0x70>
+    if((OE2 == 0x02) && (encoder2 == 0x03)){
+	if(bit0 & bit1){
+	
+	}
+	else if (bit0)
+    	counter =counter- 2;
+ 556:	80 91 36 01 	lds	r24, 0x0136
+ 55a:	90 91 37 01 	lds	r25, 0x0137
+ 55e:	02 97       	sbiw	r24, 0x02	; 2
+ 560:	90 93 37 01 	sts	0x0137, r25
+ 564:	80 93 36 01 	sts	0x0136, r24
+ 568:	c9 ce       	rjmp	.-622    	; 0x2fc <__vector_16+0x13e>
+      		uint8_t checker =NotTouched-  PINA;
+  switch(checker){
+    
+
+case 0x04:
+if(hex==0x00){
+ 56a:	80 91 24 01 	lds	r24, 0x0124
+ 56e:	90 91 25 01 	lds	r25, 0x0125
+ 572:	89 2b       	or	r24, r25
+ 574:	09 f0       	breq	.+2      	; 0x578 <__vector_16+0x3ba>
+ 576:	46 c0       	rjmp	.+140    	; 0x604 <__vector_16+0x446>
+hex=0x01;
+ 578:	81 e0       	ldi	r24, 0x01	; 1
+ 57a:	90 e0       	ldi	r25, 0x00	; 0
+ 57c:	90 93 25 01 	sts	0x0125, r25
+ 580:	80 93 24 01 	sts	0x0124, r24
+ 584:	58 ce       	rjmp	.-848    	; 0x236 <__vector_16+0x78>
+	}
+	
+      break;
+    
+case 0x02:
+    if(bit1==0x00){
+ 586:	80 91 32 01 	lds	r24, 0x0132
+ 58a:	90 91 33 01 	lds	r25, 0x0133
+ 58e:	89 2b       	or	r24, r25
+ 590:	a1 f4       	brne	.+40     	; 0x5ba <__vector_16+0x3fc>
+		bit1=0x01;
+ 592:	81 e0       	ldi	r24, 0x01	; 1
+ 594:	90 e0       	ldi	r25, 0x00	; 0
+ 596:	90 93 33 01 	sts	0x0133, r25
+ 59a:	80 93 32 01 	sts	0x0132, r24
+		if (BARAGRAPH==0x00){
+ 59e:	80 91 2e 01 	lds	r24, 0x012E
+ 5a2:	90 91 2f 01 	lds	r25, 0x012F
+ 5a6:	89 2b       	or	r24, r25
+ 5a8:	09 f0       	breq	.+2      	; 0x5ac <__vector_16+0x3ee>
+ 5aa:	e8 ce       	rjmp	.-560    	; 0x37c <__vector_16+0x1be>
+		bit0=0x00;
+		if (BARAGRAPH==0x01){
+			BARAGRAPH=0x00;
+		}
+		else{
+			BARAGRAPH=0x02;
+ 5ac:	82 e0       	ldi	r24, 0x02	; 2
+ 5ae:	90 e0       	ldi	r25, 0x00	; 0
+ 5b0:	90 93 2f 01 	sts	0x012F, r25
+ 5b4:	80 93 2e 01 	sts	0x012E, r24
+ 5b8:	3e ce       	rjmp	.-900    	; 0x236 <__vector_16+0x78>
+		else{
+			BARAGRAPH=0x03;
+		}		
+	}
+    else{
+     		 bit1 = 0x00;
+ 5ba:	10 92 33 01 	sts	0x0133, r1
+ 5be:	10 92 32 01 	sts	0x0132, r1
+		if (BARAGRAPH==0x02){
+ 5c2:	80 91 2e 01 	lds	r24, 0x012E
+ 5c6:	90 91 2f 01 	lds	r25, 0x012F
+ 5ca:	02 97       	sbiw	r24, 0x02	; 2
+ 5cc:	b1 f0       	breq	.+44     	; 0x5fa <__vector_16+0x43c>
+
+case 0x01:
+	if(bit0==0x00){
+		bit0=0x01;
+		if (BARAGRAPH==0x00){
+			BARAGRAPH=0x01;
+ 5ce:	81 e0       	ldi	r24, 0x01	; 1
+ 5d0:	90 e0       	ldi	r25, 0x00	; 0
+ 5d2:	90 93 2f 01 	sts	0x012F, r25
+ 5d6:	80 93 2e 01 	sts	0x012E, r24
+ 5da:	2d ce       	rjmp	.-934    	; 0x236 <__vector_16+0x78>
+		}
+	}
+	else{
+		bit0=0x00;
+		if (BARAGRAPH==0x01){
+			BARAGRAPH=0x00;
+ 5dc:	10 92 2f 01 	sts	0x012F, r1
+ 5e0:	10 92 2e 01 	sts	0x012E, r1
+ 5e4:	24 ce       	rjmp	.-952    	; 0x22e <__vector_16+0x70>
+		else{
+			BARAGRAPH=0x03;
+		}
+	}
+	else{
+		bit0=0x00;
+ 5e6:	10 92 35 01 	sts	0x0135, r1
+ 5ea:	10 92 34 01 	sts	0x0134, r1
+		if (BARAGRAPH==0x01){
+ 5ee:	80 91 2e 01 	lds	r24, 0x012E
+ 5f2:	90 91 2f 01 	lds	r25, 0x012F
+ 5f6:	01 97       	sbiw	r24, 0x01	; 1
+ 5f8:	c9 f6       	brne	.-78     	; 0x5ac <__vector_16+0x3ee>
+			BARAGRAPH=0x00;
+ 5fa:	10 92 2f 01 	sts	0x012F, r1
+ 5fe:	10 92 2e 01 	sts	0x012E, r1
+ 602:	19 ce       	rjmp	.-974    	; 0x236 <__vector_16+0x78>
+if(hex==0x00){
+hex=0x01;
+
+}
+
+else{ hex=0x00;}
+ 604:	10 92 25 01 	sts	0x0125, r1
+ 608:	10 92 24 01 	sts	0x0124, r1
+ 60c:	14 ce       	rjmp	.-984    	; 0x236 <__vector_16+0x78>
+	
+	}
+	else if (bit0)
+    	counter =counter- 2;
+  	else if (bit1)
+    	counter = counter-4;
+ 60e:	04 97       	sbiw	r24, 0x04	; 4
+ 610:	90 93 37 01 	sts	0x0137, r25
+ 614:	80 93 36 01 	sts	0x0136, r24
+ 618:	71 ce       	rjmp	.-798    	; 0x2fc <__vector_16+0x13e>
+	if(bit0 & bit1){
+	}
+  	else if (bit0)
+    	counter = counter+2;
+  	else if (bit1)
+    	counter =counter+ 4;
+ 61a:	80 91 36 01 	lds	r24, 0x0136
+ 61e:	90 91 37 01 	lds	r25, 0x0137
+    if((OE2 == 0x01) && (encoder2 == 0x03)){     
+	if(bit0 & bit1){
+	}
+  	else if (bit0)
+    	counter = counter+2;
+  	else if (bit1)
+ 622:	23 2b       	or	r18, r19
+ 624:	01 f1       	breq	.+64     	; 0x666 <__vector_16+0x4a8>
+    	counter =counter+ 4;
+ 626:	04 96       	adiw	r24, 0x04	; 4
+ 628:	90 93 37 01 	sts	0x0137, r25
+ 62c:	80 93 36 01 	sts	0x0136, r24
+ 630:	65 ce       	rjmp	.-822    	; 0x2fc <__vector_16+0x13e>
+	if(bit0 & bit1){    	
+	}
+  	else if (bit0)
+    	counter =counter+ 2;
+  	else if (bit1)
+    	counter =counter+ 4;
+ 632:	40 91 36 01 	lds	r20, 0x0136
+ 636:	50 91 37 01 	lds	r21, 0x0137
+  
+	if(bit0 & bit1){    	
+	}
+  	else if (bit0)
+    	counter =counter+ 2;
+  	else if (bit1)
+ 63a:	67 2b       	or	r22, r23
+ 63c:	d1 f0       	breq	.+52     	; 0x672 <__vector_16+0x4b4>
+    	counter =counter+ 4;
+ 63e:	4c 5f       	subi	r20, 0xFC	; 252
+ 640:	5f 4f       	sbci	r21, 0xFF	; 255
+ 642:	50 93 37 01 	sts	0x0137, r21
+ 646:	40 93 36 01 	sts	0x0136, r20
+ 64a:	4b ce       	rjmp	.-874    	; 0x2e2 <__vector_16+0x124>
+	if(bit0 & bit1){    	
+	}
+  	else if (bit0)
+    	counter =counter- 2;
+  	else if (bit1)
+    	counter =counter- 4;
+ 64c:	40 91 36 01 	lds	r20, 0x0136
+ 650:	50 91 37 01 	lds	r21, 0x0137
+    if((OE1 == 0x02) && (encoder1 == 0x03)){      
+	if(bit0 & bit1){    	
+	}
+  	else if (bit0)
+    	counter =counter- 2;
+  	else if (bit1)
+ 654:	67 2b       	or	r22, r23
+ 656:	a1 f0       	breq	.+40     	; 0x680 <__vector_16+0x4c2>
+    	counter =counter- 4;
+ 658:	44 50       	subi	r20, 0x04	; 4
+ 65a:	51 09       	sbc	r21, r1
+ 65c:	50 93 37 01 	sts	0x0137, r21
+ 660:	40 93 36 01 	sts	0x0136, r20
+ 664:	3e ce       	rjmp	.-900    	; 0x2e2 <__vector_16+0x124>
+  	else if (bit0)
+    	counter = counter+2;
+  	else if (bit1)
+    	counter =counter+ 4;
+  	else
+    	counter= counter+1;
+ 666:	01 96       	adiw	r24, 0x01	; 1
+ 668:	90 93 37 01 	sts	0x0137, r25
+ 66c:	80 93 36 01 	sts	0x0136, r24
+ 670:	45 ce       	rjmp	.-886    	; 0x2fc <__vector_16+0x13e>
+  	else if (bit0)
+    	counter =counter+ 2;
+  	else if (bit1)
+    	counter =counter+ 4;
+  	else
+    	counter = counter+1;
+ 672:	4f 5f       	subi	r20, 0xFF	; 255
+ 674:	5f 4f       	sbci	r21, 0xFF	; 255
+ 676:	50 93 37 01 	sts	0x0137, r21
+ 67a:	40 93 36 01 	sts	0x0136, r20
+ 67e:	31 ce       	rjmp	.-926    	; 0x2e2 <__vector_16+0x124>
+  	else if (bit0)
+    	counter =counter- 2;
+  	else if (bit1)
+    	counter =counter- 4;
+  	else
+    	counter =counter- 1;
+ 680:	41 50       	subi	r20, 0x01	; 1
+ 682:	51 09       	sbc	r21, r1
+ 684:	50 93 37 01 	sts	0x0137, r21
+ 688:	40 93 36 01 	sts	0x0136, r20
+ 68c:	2a ce       	rjmp	.-940    	; 0x2e2 <__vector_16+0x124>
+
+0000068e <main>:
+
+int main()
+{
+
+/*******************/
+  DDRA = 0xFF; 
+ 68e:	9f ef       	ldi	r25, 0xFF	; 255
+ 690:	9a bb       	out	0x1a, r25	; 26
+  DDRB =0xF7;  //enabling the bits from 0 to 2 as well as the upper nibble  
+ 692:	87 ef       	ldi	r24, 0xF7	; 247
+ 694:	87 bb       	out	0x17, r24	; 23
+  DDRE = 0xC0;  // enabling bit 6 and 7
+ 696:	80 ec       	ldi	r24, 0xC0	; 192
+ 698:	82 b9       	out	0x02, r24	; 2
+  PORTE= 0x40;  //  bit 6 as high
+ 69a:	80 e4       	ldi	r24, 0x40	; 64
+ 69c:	83 b9       	out	0x03, r24	; 3
+/******************/
+TIMSK |= (1<<TOIE0); 
+ 69e:	87 b7       	in	r24, 0x37	; 55
+ 6a0:	81 60       	ori	r24, 0x01	; 1
+ 6a2:	87 bf       	out	0x37, r24	; 55
+TCCR0 |= (1<<CS02) | (1<<CS01) | (0<<CS00);  //Normal mode but not 128
+ 6a4:	83 b7       	in	r24, 0x33	; 51
+ 6a6:	86 60       	ori	r24, 0x06	; 6
+ 6a8:	83 bf       	out	0x33, r24	; 51
+/**********************/
+SPCR = (1 << SPE) | (1 << MSTR) ;
+ 6aa:	80 e5       	ldi	r24, 0x50	; 80
+ 6ac:	8d b9       	out	0x0d, r24	; 13
+/***************/
+	sei(); 
+ 6ae:	78 94       	sei
+ 	DDRA = 0xFF; 
+ 6b0:	9a bb       	out	0x1a, r25	; 26
+	PORTB =0x70;
+ 6b2:	80 e7       	ldi	r24, 0x70	; 112
+ 6b4:	88 bb       	out	0x18, r24	; 24
+ 6b6:	80 91 24 01 	lds	r24, 0x0124
+ 6ba:	90 91 25 01 	lds	r25, 0x0125
+  while(1){  
+
+if (hex==0x01){
+ 6be:	81 30       	cpi	r24, 0x01	; 1
+ 6c0:	91 05       	cpc	r25, r1
+ 6c2:	59 f0       	breq	.+22     	; 0x6da <main+0x4c>
+display_digits_hex();
+}
+else if(hex==0x00){
+ 6c4:	00 97       	sbiw	r24, 0x00	; 0
+ 6c6:	d9 f7       	brne	.-10     	; 0x6be <main+0x30>
+display_digits();
+ 6c8:	0e 94 67 00 	call	0xce	; 0xce <display_digits>
+ 6cc:	80 91 24 01 	lds	r24, 0x0124
+ 6d0:	90 91 25 01 	lds	r25, 0x0125
+	sei(); 
+ 	DDRA = 0xFF; 
+	PORTB =0x70;
+  while(1){  
+
+if (hex==0x01){
+ 6d4:	81 30       	cpi	r24, 0x01	; 1
+ 6d6:	91 05       	cpc	r25, r1
+ 6d8:	a9 f7       	brne	.-22     	; 0x6c4 <main+0x36>
+display_digits_hex();
+ 6da:	0e 94 a9 00 	call	0x152	; 0x152 <display_digits_hex>
+ 6de:	80 91 24 01 	lds	r24, 0x0124
+ 6e2:	90 91 25 01 	lds	r25, 0x0125
+ 6e6:	eb cf       	rjmp	.-42     	; 0x6be <main+0x30>
+
+000006e8 <__umulhisi3>:
+ 6e8:	a2 9f       	mul	r26, r18
+ 6ea:	b0 01       	movw	r22, r0
+ 6ec:	b3 9f       	mul	r27, r19
+ 6ee:	c0 01       	movw	r24, r0
+ 6f0:	a3 9f       	mul	r26, r19
+ 6f2:	70 0d       	add	r23, r0
+ 6f4:	81 1d       	adc	r24, r1
+ 6f6:	11 24       	eor	r1, r1
+ 6f8:	91 1d       	adc	r25, r1
+ 6fa:	b2 9f       	mul	r27, r18
+ 6fc:	70 0d       	add	r23, r0
+ 6fe:	81 1d       	adc	r24, r1
+ 700:	11 24       	eor	r1, r1
+ 702:	91 1d       	adc	r25, r1
+ 704:	08 95       	ret
+
+00000706 <_exit>:
+ 706:	f8 94       	cli
+
+00000708 <__stop_program>:
+ 708:	ff cf       	rjmp	.-2      	; 0x708 <__stop_program>

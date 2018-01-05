@@ -1,0 +1,2259 @@
+
+lab3_test.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000002  00800100  00000b3a  00000bce  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000b3a  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000034  00800102  00800102  00000bd0  2**0
+                  ALLOC
+  3 .stab         0000192c  00000000  00000000  00000bd0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      0000109d  00000000  00000000  000024fc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .comment      00000011  00000000  00000000  00003599  2**0
+                  CONTENTS, READONLY
+  6 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000035ac  2**2
+                  CONTENTS, READONLY
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 78 00 	jmp	0xf0	; 0xf0 <__ctors_end>
+   4:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+   8:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+   c:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  10:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  14:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  18:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  1c:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  20:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  24:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  28:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  2c:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  30:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  34:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  38:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  3c:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  40:	0c 94 7f 04 	jmp	0x8fe	; 0x8fe <__vector_16>
+  44:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  48:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  4c:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  50:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  54:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  58:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  5c:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  60:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  64:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  68:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  6c:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  70:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  74:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  78:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  7c:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  80:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  84:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  88:	0c 94 97 00 	jmp	0x12e	; 0x12e <__bad_interrupt>
+  8c:	b0 01       	movw	r22, r0
+  8e:	b3 01       	movw	r22, r6
+  90:	b6 01       	movw	r22, r12
+  92:	b9 01       	movw	r22, r18
+  94:	bc 01       	movw	r22, r24
+  96:	bf 01       	movw	r22, r30
+  98:	c2 01       	movw	r24, r4
+  9a:	c5 01       	movw	r24, r10
+  9c:	ad 01       	movw	r20, r26
+  9e:	aa 01       	movw	r20, r20
+  a0:	58 02       	muls	r21, r24
+  a2:	55 02       	muls	r21, r21
+  a4:	52 02       	muls	r21, r18
+  a6:	4f 02       	muls	r20, r31
+  a8:	4c 02       	muls	r20, r28
+  aa:	49 02       	muls	r20, r25
+  ac:	46 02       	muls	r20, r22
+  ae:	43 02       	muls	r20, r19
+  b0:	40 02       	muls	r20, r16
+  b2:	5b 02       	muls	r21, r27
+  b4:	58 02       	muls	r21, r24
+  b6:	55 02       	muls	r21, r21
+  b8:	52 02       	muls	r21, r18
+  ba:	4f 02       	muls	r20, r31
+  bc:	4c 02       	muls	r20, r28
+  be:	49 02       	muls	r20, r25
+  c0:	46 02       	muls	r20, r22
+  c2:	43 02       	muls	r20, r19
+  c4:	40 02       	muls	r20, r16
+  c6:	5b 02       	muls	r21, r27
+  c8:	58 02       	muls	r21, r24
+  ca:	55 02       	muls	r21, r21
+  cc:	52 02       	muls	r21, r18
+  ce:	4f 02       	muls	r20, r31
+  d0:	4c 02       	muls	r20, r28
+  d2:	49 02       	muls	r20, r25
+  d4:	46 02       	muls	r20, r22
+  d6:	43 02       	muls	r20, r19
+  d8:	40 02       	muls	r20, r16
+  da:	5b 02       	muls	r21, r27
+  dc:	58 02       	muls	r21, r24
+  de:	55 02       	muls	r21, r21
+  e0:	52 02       	muls	r21, r18
+  e2:	4f 02       	muls	r20, r31
+  e4:	4c 02       	muls	r20, r28
+  e6:	49 02       	muls	r20, r25
+  e8:	46 02       	muls	r20, r22
+  ea:	43 02       	muls	r20, r19
+  ec:	40 02       	muls	r20, r16
+  ee:	5b 02       	muls	r21, r27
+
+000000f0 <__ctors_end>:
+  f0:	11 24       	eor	r1, r1
+  f2:	1f be       	out	0x3f, r1	; 63
+  f4:	cf ef       	ldi	r28, 0xFF	; 255
+  f6:	d0 e1       	ldi	r29, 0x10	; 16
+  f8:	de bf       	out	0x3e, r29	; 62
+  fa:	cd bf       	out	0x3d, r28	; 61
+
+000000fc <__do_copy_data>:
+  fc:	11 e0       	ldi	r17, 0x01	; 1
+  fe:	a0 e0       	ldi	r26, 0x00	; 0
+ 100:	b1 e0       	ldi	r27, 0x01	; 1
+ 102:	ea e3       	ldi	r30, 0x3A	; 58
+ 104:	fb e0       	ldi	r31, 0x0B	; 11
+ 106:	00 e0       	ldi	r16, 0x00	; 0
+ 108:	0b bf       	out	0x3b, r16	; 59
+ 10a:	02 c0       	rjmp	.+4      	; 0x110 <__do_copy_data+0x14>
+ 10c:	07 90       	elpm	r0, Z+
+ 10e:	0d 92       	st	X+, r0
+ 110:	a2 30       	cpi	r26, 0x02	; 2
+ 112:	b1 07       	cpc	r27, r17
+ 114:	d9 f7       	brne	.-10     	; 0x10c <__do_copy_data+0x10>
+
+00000116 <__do_clear_bss>:
+ 116:	21 e0       	ldi	r18, 0x01	; 1
+ 118:	a2 e0       	ldi	r26, 0x02	; 2
+ 11a:	b1 e0       	ldi	r27, 0x01	; 1
+ 11c:	01 c0       	rjmp	.+2      	; 0x120 <.do_clear_bss_start>
+
+0000011e <.do_clear_bss_loop>:
+ 11e:	1d 92       	st	X+, r1
+
+00000120 <.do_clear_bss_start>:
+ 120:	a6 33       	cpi	r26, 0x36	; 54
+ 122:	b2 07       	cpc	r27, r18
+ 124:	e1 f7       	brne	.-8      	; 0x11e <.do_clear_bss_loop>
+ 126:	0e 94 58 05 	call	0xab0	; 0xab0 <main>
+ 12a:	0c 94 9b 05 	jmp	0xb36	; 0xb36 <_exit>
+
+0000012e <__bad_interrupt>:
+ 12e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000132 <SET_DIGIT_ONE>:
+uint8_t randoTest = 0;
+uint8_t inc2Bool = 0x00;
+uint8_t inc4Bool = 0x00;
+
+//Digit control low-level code
+void inline SET_DIGIT_ONE(void)   {PORTB |= DIG_SEL_3; PORTB = PORTB & ~(DIG_SEL_1 | DIG_SEL_2);}
+ 132:	c6 9a       	sbi	0x18, 6	; 24
+ 134:	88 b3       	in	r24, 0x18	; 24
+ 136:	8f 7c       	andi	r24, 0xCF	; 207
+ 138:	88 bb       	out	0x18, r24	; 24
+ 13a:	08 95       	ret
+
+0000013c <SET_DIGIT_TWO>:
+void inline SET_DIGIT_TWO(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2; PORTB = PORTB & ~(DIG_SEL_3);}
+ 13c:	88 b3       	in	r24, 0x18	; 24
+ 13e:	80 63       	ori	r24, 0x30	; 48
+ 140:	88 bb       	out	0x18, r24	; 24
+ 142:	c6 98       	cbi	0x18, 6	; 24
+ 144:	08 95       	ret
+
+00000146 <SET_DIGIT_THREE>:
+void inline SET_DIGIT_THREE(void) {PORTB |= DIG_SEL_1; PORTB = PORTB & ~(DIG_SEL_2 | DIG_SEL_3);}
+ 146:	c4 9a       	sbi	0x18, 4	; 24
+ 148:	88 b3       	in	r24, 0x18	; 24
+ 14a:	8f 79       	andi	r24, 0x9F	; 159
+ 14c:	88 bb       	out	0x18, r24	; 24
+ 14e:	08 95       	ret
+
+00000150 <SET_DIGIT_FOUR>:
+void inline SET_DIGIT_FOUR(void)  {PORTB = PORTB & ~(DIG_SEL_1 | DIG_SEL_2 | DIG_SEL_3);}
+ 150:	88 b3       	in	r24, 0x18	; 24
+ 152:	8f 78       	andi	r24, 0x8F	; 143
+ 154:	88 bb       	out	0x18, r24	; 24
+ 156:	08 95       	ret
+
+00000158 <ENABLE_BUFFER>:
+
+//Tri-State Buffer Enable
+void inline ENABLE_BUFFER(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2 | DIG_SEL_3;}
+ 158:	88 b3       	in	r24, 0x18	; 24
+ 15a:	80 67       	ori	r24, 0x70	; 112
+ 15c:	88 bb       	out	0x18, r24	; 24
+ 15e:	08 95       	ret
+
+00000160 <ENABLE_LED_CONTROL>:
+
+//Port A Control
+void inline ENABLE_LED_CONTROL(void) {DDRA = 0xFF; SET_DIGIT_THREE(); PORTB |= DIG_SEL_3;} //Enables PORTA as an output, while also ensuring the Tri-state buffer is disabled by selecting digit one
+ 160:	8f ef       	ldi	r24, 0xFF	; 255
+ 162:	8a bb       	out	0x1a, r24	; 26
+uint8_t inc4Bool = 0x00;
+
+//Digit control low-level code
+void inline SET_DIGIT_ONE(void)   {PORTB |= DIG_SEL_3; PORTB = PORTB & ~(DIG_SEL_1 | DIG_SEL_2);}
+void inline SET_DIGIT_TWO(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2; PORTB = PORTB & ~(DIG_SEL_3);}
+void inline SET_DIGIT_THREE(void) {PORTB |= DIG_SEL_1; PORTB = PORTB & ~(DIG_SEL_2 | DIG_SEL_3);}
+ 164:	c4 9a       	sbi	0x18, 4	; 24
+ 166:	88 b3       	in	r24, 0x18	; 24
+ 168:	8f 79       	andi	r24, 0x9F	; 159
+ 16a:	88 bb       	out	0x18, r24	; 24
+
+//Tri-State Buffer Enable
+void inline ENABLE_BUFFER(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2 | DIG_SEL_3;}
+
+//Port A Control
+void inline ENABLE_LED_CONTROL(void) {DDRA = 0xFF; SET_DIGIT_THREE(); PORTB |= DIG_SEL_3;} //Enables PORTA as an output, while also ensuring the Tri-state buffer is disabled by selecting digit one
+ 16c:	c6 9a       	sbi	0x18, 6	; 24
+ 16e:	08 95       	ret
+
+00000170 <ENABLE_BUTTON_READ>:
+void inline ENABLE_BUTTON_READ(void) {DDRA = 0x00; PORTA = 0xFF;}  //Enable inputs/pullups on PORTA
+ 170:	1a ba       	out	0x1a, r1	; 26
+ 172:	8f ef       	ldi	r24, 0xFF	; 255
+ 174:	8b bb       	out	0x1b, r24	; 27
+ 176:	08 95       	ret
+
+00000178 <ENC_CLK_ENABLE>:
+
+void inline ENC_CLK_ENABLE(void)  {PORTE &= ~(0x40);}
+ 178:	1e 98       	cbi	0x03, 6	; 3
+ 17a:	08 95       	ret
+
+0000017c <ENC_CLK_DISABLE>:
+void inline ENC_CLK_DISABLE(void) {PORTE |=   0x40 ;}
+ 17c:	1e 9a       	sbi	0x03, 6	; 3
+ 17e:	08 95       	ret
+
+00000180 <ENC_PARALLEL_ENABLE>:
+
+void inline ENC_PARALLEL_ENABLE(void)  {PORTE &= ~(0x80);}
+ 180:	1f 98       	cbi	0x03, 7	; 3
+ 182:	08 95       	ret
+
+00000184 <ENC_PARALLEL_DISABLE>:
+void inline ENC_PARALLEL_DISABLE(void) {PORTE |=   0x80 ;}
+ 184:	1f 9a       	sbi	0x03, 7	; 3
+ 186:	08 95       	ret
+
+00000188 <ENC_L_COUNTUP>:
+  
+}
+
+//Called to increment the counter variable
+void inline incrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+ 188:	80 91 09 01 	lds	r24, 0x0109
+ 18c:	90 91 08 01 	lds	r25, 0x0108
+ 190:	29 2f       	mov	r18, r25
+ 192:	28 23       	and	r18, r24
+ 194:	c1 f4       	brne	.+48     	; 0x1c6 <ENC_L_COUNTUP+0x3e>
+    NOP();
+  else if (inc2Bool)
+ 196:	81 11       	cpse	r24, r1
+ 198:	0c c0       	rjmp	.+24     	; 0x1b2 <ENC_L_COUNTUP+0x2a>
+    counter += 2;
+  else if (inc4Bool)
+ 19a:	91 11       	cpse	r25, r1
+ 19c:	16 c0       	rjmp	.+44     	; 0x1ca <ENC_L_COUNTUP+0x42>
+    counter += 4;
+  else
+    counter += 1;
+ 19e:	80 91 0b 01 	lds	r24, 0x010B
+ 1a2:	90 91 0c 01 	lds	r25, 0x010C
+ 1a6:	01 96       	adiw	r24, 0x01	; 1
+ 1a8:	90 93 0c 01 	sts	0x010C, r25
+ 1ac:	80 93 0b 01 	sts	0x010B, r24
+ 1b0:	08 95       	ret
+//Called to increment the counter variable
+void inline incrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+    NOP();
+  else if (inc2Bool)
+    counter += 2;
+ 1b2:	80 91 0b 01 	lds	r24, 0x010B
+ 1b6:	90 91 0c 01 	lds	r25, 0x010C
+ 1ba:	02 96       	adiw	r24, 0x02	; 2
+ 1bc:	90 93 0c 01 	sts	0x010C, r25
+ 1c0:	80 93 0b 01 	sts	0x010B, r24
+ 1c4:	08 95       	ret
+}
+
+//Called to increment the counter variable
+void inline incrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+    NOP();
+ 1c6:	00 00       	nop
+ 1c8:	08 95       	ret
+  else if (inc2Bool)
+    counter += 2;
+  else if (inc4Bool)
+    counter += 4;
+ 1ca:	80 91 0b 01 	lds	r24, 0x010B
+ 1ce:	90 91 0c 01 	lds	r25, 0x010C
+ 1d2:	04 96       	adiw	r24, 0x04	; 4
+ 1d4:	90 93 0c 01 	sts	0x010C, r25
+ 1d8:	80 93 0b 01 	sts	0x010B, r24
+ 1dc:	08 95       	ret
+
+000001de <ENC_L_COUNTDOWN>:
+    
+}
+
+//Called to decrement the counter variable
+void inline decrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+ 1de:	80 91 09 01 	lds	r24, 0x0109
+ 1e2:	90 91 08 01 	lds	r25, 0x0108
+ 1e6:	29 2f       	mov	r18, r25
+ 1e8:	28 23       	and	r18, r24
+ 1ea:	c1 f4       	brne	.+48     	; 0x21c <ENC_L_COUNTDOWN+0x3e>
+    NOP();
+  else if (inc2Bool)
+ 1ec:	81 11       	cpse	r24, r1
+ 1ee:	0c c0       	rjmp	.+24     	; 0x208 <ENC_L_COUNTDOWN+0x2a>
+    counter -= 2;
+  else if (inc4Bool)
+ 1f0:	91 11       	cpse	r25, r1
+ 1f2:	16 c0       	rjmp	.+44     	; 0x220 <ENC_L_COUNTDOWN+0x42>
+    counter -= 4;
+  else
+    counter -= 1;
+ 1f4:	80 91 0b 01 	lds	r24, 0x010B
+ 1f8:	90 91 0c 01 	lds	r25, 0x010C
+ 1fc:	01 97       	sbiw	r24, 0x01	; 1
+ 1fe:	90 93 0c 01 	sts	0x010C, r25
+ 202:	80 93 0b 01 	sts	0x010B, r24
+ 206:	08 95       	ret
+//Called to decrement the counter variable
+void inline decrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+    NOP();
+  else if (inc2Bool)
+    counter -= 2;
+ 208:	80 91 0b 01 	lds	r24, 0x010B
+ 20c:	90 91 0c 01 	lds	r25, 0x010C
+ 210:	02 97       	sbiw	r24, 0x02	; 2
+ 212:	90 93 0c 01 	sts	0x010C, r25
+ 216:	80 93 0b 01 	sts	0x010B, r24
+ 21a:	08 95       	ret
+}
+
+//Called to decrement the counter variable
+void inline decrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+    NOP();
+ 21c:	00 00       	nop
+ 21e:	08 95       	ret
+  else if (inc2Bool)
+    counter -= 2;
+  else if (inc4Bool)
+    counter -= 4;
+ 220:	80 91 0b 01 	lds	r24, 0x010B
+ 224:	90 91 0c 01 	lds	r25, 0x010C
+ 228:	04 97       	sbiw	r24, 0x04	; 4
+ 22a:	90 93 0c 01 	sts	0x010C, r25
+ 22e:	80 93 0b 01 	sts	0x010B, r24
+ 232:	08 95       	ret
+
+00000234 <ENC_R_COUNTUP>:
+  
+}
+
+//Called to increment the counter variable
+void inline incrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+ 234:	80 91 09 01 	lds	r24, 0x0109
+ 238:	90 91 08 01 	lds	r25, 0x0108
+ 23c:	29 2f       	mov	r18, r25
+ 23e:	28 23       	and	r18, r24
+ 240:	c1 f4       	brne	.+48     	; 0x272 <ENC_R_COUNTUP+0x3e>
+    NOP();
+  else if (inc2Bool)
+ 242:	81 11       	cpse	r24, r1
+ 244:	0c c0       	rjmp	.+24     	; 0x25e <ENC_R_COUNTUP+0x2a>
+    counter += 2;
+  else if (inc4Bool)
+ 246:	91 11       	cpse	r25, r1
+ 248:	16 c0       	rjmp	.+44     	; 0x276 <ENC_R_COUNTUP+0x42>
+    counter += 4;
+  else
+    counter += 1;
+ 24a:	80 91 0b 01 	lds	r24, 0x010B
+ 24e:	90 91 0c 01 	lds	r25, 0x010C
+ 252:	01 96       	adiw	r24, 0x01	; 1
+ 254:	90 93 0c 01 	sts	0x010C, r25
+ 258:	80 93 0b 01 	sts	0x010B, r24
+ 25c:	08 95       	ret
+//Called to increment the counter variable
+void inline incrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+    NOP();
+  else if (inc2Bool)
+    counter += 2;
+ 25e:	80 91 0b 01 	lds	r24, 0x010B
+ 262:	90 91 0c 01 	lds	r25, 0x010C
+ 266:	02 96       	adiw	r24, 0x02	; 2
+ 268:	90 93 0c 01 	sts	0x010C, r25
+ 26c:	80 93 0b 01 	sts	0x010B, r24
+ 270:	08 95       	ret
+}
+
+//Called to increment the counter variable
+void inline incrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+    NOP();
+ 272:	00 00       	nop
+ 274:	08 95       	ret
+  else if (inc2Bool)
+    counter += 2;
+  else if (inc4Bool)
+    counter += 4;
+ 276:	80 91 0b 01 	lds	r24, 0x010B
+ 27a:	90 91 0c 01 	lds	r25, 0x010C
+ 27e:	04 96       	adiw	r24, 0x04	; 4
+ 280:	90 93 0c 01 	sts	0x010C, r25
+ 284:	80 93 0b 01 	sts	0x010B, r24
+ 288:	08 95       	ret
+
+0000028a <ENC_R_COUNTDOWN>:
+    
+}
+
+//Called to decrement the counter variable
+void inline decrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+ 28a:	80 91 09 01 	lds	r24, 0x0109
+ 28e:	90 91 08 01 	lds	r25, 0x0108
+ 292:	29 2f       	mov	r18, r25
+ 294:	28 23       	and	r18, r24
+ 296:	c1 f4       	brne	.+48     	; 0x2c8 <ENC_R_COUNTDOWN+0x3e>
+    NOP();
+  else if (inc2Bool)
+ 298:	81 11       	cpse	r24, r1
+ 29a:	0c c0       	rjmp	.+24     	; 0x2b4 <ENC_R_COUNTDOWN+0x2a>
+    counter -= 2;
+  else if (inc4Bool)
+ 29c:	91 11       	cpse	r25, r1
+ 29e:	16 c0       	rjmp	.+44     	; 0x2cc <ENC_R_COUNTDOWN+0x42>
+    counter -= 4;
+  else
+    counter -= 1;
+ 2a0:	80 91 0b 01 	lds	r24, 0x010B
+ 2a4:	90 91 0c 01 	lds	r25, 0x010C
+ 2a8:	01 97       	sbiw	r24, 0x01	; 1
+ 2aa:	90 93 0c 01 	sts	0x010C, r25
+ 2ae:	80 93 0b 01 	sts	0x010B, r24
+ 2b2:	08 95       	ret
+//Called to decrement the counter variable
+void inline decrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+    NOP();
+  else if (inc2Bool)
+    counter -= 2;
+ 2b4:	80 91 0b 01 	lds	r24, 0x010B
+ 2b8:	90 91 0c 01 	lds	r25, 0x010C
+ 2bc:	02 97       	sbiw	r24, 0x02	; 2
+ 2be:	90 93 0c 01 	sts	0x010C, r25
+ 2c2:	80 93 0b 01 	sts	0x010B, r24
+ 2c6:	08 95       	ret
+}
+
+//Called to decrement the counter variable
+void inline decrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+    NOP();
+ 2c8:	00 00       	nop
+ 2ca:	08 95       	ret
+  else if (inc2Bool)
+    counter -= 2;
+  else if (inc4Bool)
+    counter -= 4;
+ 2cc:	80 91 0b 01 	lds	r24, 0x010B
+ 2d0:	90 91 0c 01 	lds	r25, 0x010C
+ 2d4:	04 97       	sbiw	r24, 0x04	; 4
+ 2d6:	90 93 0c 01 	sts	0x010C, r25
+ 2da:	80 93 0b 01 	sts	0x010B, r24
+ 2de:	08 95       	ret
+
+000002e0 <configureIO>:
+
+//Tri-State Buffer Enable
+void inline ENABLE_BUFFER(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2 | DIG_SEL_3;}
+
+//Port A Control
+void inline ENABLE_LED_CONTROL(void) {DDRA = 0xFF; SET_DIGIT_THREE(); PORTB |= DIG_SEL_3;} //Enables PORTA as an output, while also ensuring the Tri-state buffer is disabled by selecting digit one
+ 2e0:	8f ef       	ldi	r24, 0xFF	; 255
+ 2e2:	8a bb       	out	0x1a, r24	; 26
+uint8_t inc4Bool = 0x00;
+
+//Digit control low-level code
+void inline SET_DIGIT_ONE(void)   {PORTB |= DIG_SEL_3; PORTB = PORTB & ~(DIG_SEL_1 | DIG_SEL_2);}
+void inline SET_DIGIT_TWO(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2; PORTB = PORTB & ~(DIG_SEL_3);}
+void inline SET_DIGIT_THREE(void) {PORTB |= DIG_SEL_1; PORTB = PORTB & ~(DIG_SEL_2 | DIG_SEL_3);}
+ 2e4:	c4 9a       	sbi	0x18, 4	; 24
+ 2e6:	88 b3       	in	r24, 0x18	; 24
+ 2e8:	8f 79       	andi	r24, 0x9F	; 159
+ 2ea:	88 bb       	out	0x18, r24	; 24
+
+//Tri-State Buffer Enable
+void inline ENABLE_BUFFER(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2 | DIG_SEL_3;}
+
+//Port A Control
+void inline ENABLE_LED_CONTROL(void) {DDRA = 0xFF; SET_DIGIT_THREE(); PORTB |= DIG_SEL_3;} //Enables PORTA as an output, while also ensuring the Tri-state buffer is disabled by selecting digit one
+ 2ec:	c6 9a       	sbi	0x18, 6	; 24
+void configureIO( void ){
+
+  ENABLE_LED_CONTROL(); 
+
+  //DDRA = 0xFF; //Initialize DDRA as if we want to control the LEDs
+  DDRB = 0xF0; //Upper nibble of the B register is for controlling the decoder / PWM Transistor
+ 2ee:	80 ef       	ldi	r24, 0xF0	; 240
+ 2f0:	87 bb       	out	0x17, r24	; 23
+
+  DDRB |= 0x07;  //Setup the SPI pins as outputs
+ 2f2:	87 b3       	in	r24, 0x17	; 23
+ 2f4:	87 60       	ori	r24, 0x07	; 7
+ 2f6:	87 bb       	out	0x17, r24	; 23
+  //(it defaults to low)
+  uint8_t i;
+
+  //Init output to 0
+  for(i = 0; i < 5; ++i){
+    output[i] = 0;
+ 2f8:	e1 e1       	ldi	r30, 0x11	; 17
+ 2fa:	f1 e0       	ldi	r31, 0x01	; 1
+ 2fc:	10 82       	st	Z, r1
+ 2fe:	11 82       	std	Z+1, r1	; 0x01
+ 300:	12 82       	std	Z+2, r1	; 0x02
+ 302:	13 82       	std	Z+3, r1	; 0x03
+ 304:	14 82       	std	Z+4, r1	; 0x04
+ 306:	15 82       	std	Z+5, r1	; 0x05
+ 308:	16 82       	std	Z+6, r1	; 0x06
+ 30a:	17 82       	std	Z+7, r1	; 0x07
+ 30c:	10 86       	std	Z+8, r1	; 0x08
+ 30e:	11 86       	std	Z+9, r1	; 0x09
+ 310:	12 86       	std	Z+10, r1	; 0x0a
+ 312:	13 86       	std	Z+11, r1	; 0x0b
+ 314:	14 86       	std	Z+12, r1	; 0x0c
+ 316:	15 86       	std	Z+13, r1	; 0x0d
+ 318:	16 86       	std	Z+14, r1	; 0x0e
+ 31a:	17 86       	std	Z+15, r1	; 0x0f
+ 31c:	10 8a       	std	Z+16, r1	; 0x10
+ 31e:	11 8a       	std	Z+17, r1	; 0x11
+ 320:	12 8a       	std	Z+18, r1	; 0x12
+ 322:	13 8a       	std	Z+19, r1	; 0x13
+  }
+
+  DDRE |= 0xC0;  //Enable Clk inhibit pin and async pin as outputs
+ 324:	82 b1       	in	r24, 0x02	; 2
+ 326:	80 6c       	ori	r24, 0xC0	; 192
+ 328:	82 b9       	out	0x02, r24	; 2
+//Port A Control
+void inline ENABLE_LED_CONTROL(void) {DDRA = 0xFF; SET_DIGIT_THREE(); PORTB |= DIG_SEL_3;} //Enables PORTA as an output, while also ensuring the Tri-state buffer is disabled by selecting digit one
+void inline ENABLE_BUTTON_READ(void) {DDRA = 0x00; PORTA = 0xFF;}  //Enable inputs/pullups on PORTA
+
+void inline ENC_CLK_ENABLE(void)  {PORTE &= ~(0x40);}
+void inline ENC_CLK_DISABLE(void) {PORTE |=   0x40 ;}
+ 32a:	1e 9a       	sbi	0x03, 6	; 3
+
+void inline ENC_PARALLEL_ENABLE(void)  {PORTE &= ~(0x80);}
+ 32c:	1f 98       	cbi	0x03, 7	; 3
+ 32e:	08 95       	ret
+
+00000330 <configureTimers>:
+}
+
+//Configures all timer/counters on the device
+void configureTimers( void ){
+  //Timer 0 configure: Polling buttons
+  TIMSK |= (1<<TOIE0); //Enable overflow interrupts
+ 330:	87 b7       	in	r24, 0x37	; 55
+ 332:	81 60       	ori	r24, 0x01	; 1
+ 334:	87 bf       	out	0x37, r24	; 55
+  TCCR0 |= (1<<CS02) | (1<<CS01) | (0<<CS00);  //Normal mode, prescale 
+ 336:	83 b7       	in	r24, 0x33	; 51
+ 338:	86 60       	ori	r24, 0x06	; 6
+ 33a:	83 bf       	out	0x33, r24	; 51
+ 33c:	08 95       	ret
+
+0000033e <configureSPI>:
+//Setup SPI on the interface
+void configureSPI( void ){
+
+  //Configure SPI
+  //Master mode, clk low on idle, leading edge sample
+  SPCR = (1 << SPE) | (1 << MSTR) | (0 << CPOL) | (0 << CPHA);   
+ 33e:	80 e5       	ldi	r24, 0x50	; 80
+ 340:	8d b9       	out	0x0d, r24	; 13
+ 342:	08 95       	ret
+
+00000344 <setSegment>:
+}
+
+//Outputs the proper segment based on the input number
+//Note: This function only currently supports 0-9 (as alphas were not needed for the assignment)
+void inline setSegment( uint16_t targetOutput ){
+  switch(targetOutput){
+ 344:	8a 30       	cpi	r24, 0x0A	; 10
+ 346:	91 05       	cpc	r25, r1
+ 348:	38 f4       	brcc	.+14     	; 0x358 <setSegment+0x14>
+ 34a:	fc 01       	movw	r30, r24
+ 34c:	ea 5b       	subi	r30, 0xBA	; 186
+ 34e:	ff 4f       	sbci	r31, 0xFF	; 255
+ 350:	0c 94 83 05 	jmp	0xb06	; 0xb06 <__tablejump2__>
+       break;
+     case 8:
+       PORTA = ~(SEG_A | SEG_B | SEG_C | SEG_D | SEG_E | SEG_F | SEG_G);
+       break;
+     case 9:
+       PORTA = ~(SEG_A | SEG_B | SEG_C | SEG_F | SEG_G);
+ 354:	88 e9       	ldi	r24, 0x98	; 152
+ 356:	8b bb       	out	0x1b, r24	; 27
+ 358:	08 95       	ret
+       break;
+     case 7:
+       PORTA = ~(SEG_A | SEG_B | SEG_C);
+       break;
+     case 8:
+       PORTA = ~(SEG_A | SEG_B | SEG_C | SEG_D | SEG_E | SEG_F | SEG_G);
+ 35a:	80 e8       	ldi	r24, 0x80	; 128
+ 35c:	8b bb       	out	0x1b, r24	; 27
+       break;
+ 35e:	08 95       	ret
+//Outputs the proper segment based on the input number
+//Note: This function only currently supports 0-9 (as alphas were not needed for the assignment)
+void inline setSegment( uint16_t targetOutput ){
+  switch(targetOutput){
+     case 0:
+       PORTA = ~(SEG_A | SEG_B | SEG_C | SEG_D | SEG_E | SEG_F);
+ 360:	80 ec       	ldi	r24, 0xC0	; 192
+ 362:	8b bb       	out	0x1b, r24	; 27
+       break;
+ 364:	08 95       	ret
+     case 1:
+       PORTA = ~(SEG_B | SEG_C);
+ 366:	89 ef       	ldi	r24, 0xF9	; 249
+ 368:	8b bb       	out	0x1b, r24	; 27
+       break;
+ 36a:	08 95       	ret
+     case 2:
+       PORTA = ~(SEG_A | SEG_B | SEG_D | SEG_E | SEG_G);
+ 36c:	84 ea       	ldi	r24, 0xA4	; 164
+ 36e:	8b bb       	out	0x1b, r24	; 27
+       break;
+ 370:	08 95       	ret
+     case 3:
+       PORTA = ~(SEG_A | SEG_B | SEG_C | SEG_D | SEG_G);  //Changed G to E
+ 372:	80 eb       	ldi	r24, 0xB0	; 176
+ 374:	8b bb       	out	0x1b, r24	; 27
+       break;
+ 376:	08 95       	ret
+     case 4:
+       PORTA = ~(SEG_B | SEG_C | SEG_F | SEG_G);
+ 378:	89 e9       	ldi	r24, 0x99	; 153
+ 37a:	8b bb       	out	0x1b, r24	; 27
+       break;
+ 37c:	08 95       	ret
+     case 5:
+       PORTA = ~(SEG_A | SEG_C | SEG_D | SEG_F | SEG_G);
+ 37e:	82 e9       	ldi	r24, 0x92	; 146
+ 380:	8b bb       	out	0x1b, r24	; 27
+       break;
+ 382:	08 95       	ret
+     case 6:
+       PORTA = ~(SEG_A | SEG_C | SEG_D | SEG_E | SEG_F | SEG_G);
+ 384:	82 e8       	ldi	r24, 0x82	; 130
+ 386:	8b bb       	out	0x1b, r24	; 27
+       break;
+ 388:	08 95       	ret
+     case 7:
+       PORTA = ~(SEG_A | SEG_B | SEG_C);
+ 38a:	88 ef       	ldi	r24, 0xF8	; 248
+ 38c:	8b bb       	out	0x1b, r24	; 27
+       break;
+ 38e:	08 95       	ret
+
+00000390 <clearSegment>:
+  }
+}
+
+//Clears the segments so nothing is being outputted on the port
+void inline clearSegment( void ){
+  PORTA = 0xFF;
+ 390:	8f ef       	ldi	r24, 0xFF	; 255
+ 392:	8b bb       	out	0x1b, r24	; 27
+ 394:	08 95       	ret
+
+00000396 <setDigit>:
+
+//Sets the decoder to choose the appropriate transistor for the appropriate digit. 
+//It also sets the appropriate segment outputs.
+//NOTE: There is an inherient 100uS delay with any call of this function
+void setDigit( uint8_t targetDigit ){ 
+  switch(targetDigit){
+ 396:	82 30       	cpi	r24, 0x02	; 2
+ 398:	09 f4       	brne	.+2      	; 0x39c <setDigit+0x6>
+ 39a:	45 c0       	rjmp	.+138    	; 0x426 <setDigit+0x90>
+ 39c:	38 f1       	brcs	.+78     	; 0x3ec <setDigit+0x56>
+ 39e:	83 30       	cpi	r24, 0x03	; 3
+ 3a0:	99 f0       	breq	.+38     	; 0x3c8 <setDigit+0x32>
+ 3a2:	84 30       	cpi	r24, 0x04	; 4
+ 3a4:	09 f0       	breq	.+2      	; 0x3a8 <setDigit+0x12>
+ 3a6:	6a c0       	rjmp	.+212    	; 0x47c <setDigit+0xe6>
+
+//Digit control low-level code
+void inline SET_DIGIT_ONE(void)   {PORTB |= DIG_SEL_3; PORTB = PORTB & ~(DIG_SEL_1 | DIG_SEL_2);}
+void inline SET_DIGIT_TWO(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2; PORTB = PORTB & ~(DIG_SEL_3);}
+void inline SET_DIGIT_THREE(void) {PORTB |= DIG_SEL_1; PORTB = PORTB & ~(DIG_SEL_2 | DIG_SEL_3);}
+void inline SET_DIGIT_FOUR(void)  {PORTB = PORTB & ~(DIG_SEL_1 | DIG_SEL_2 | DIG_SEL_3);}
+ 3a8:	88 b3       	in	r24, 0x18	; 24
+ 3aa:	8f 78       	andi	r24, 0x8F	; 143
+ 3ac:	88 bb       	out	0x18, r24	; 24
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 3ae:	81 e2       	ldi	r24, 0x21	; 33
+ 3b0:	8a 95       	dec	r24
+ 3b2:	f1 f7       	brne	.-4      	; 0x3b0 <setDigit+0x1a>
+ 3b4:	00 00       	nop
+}
+
+//Outputs the proper segment based on the input number
+//Note: This function only currently supports 0-9 (as alphas were not needed for the assignment)
+void inline setSegment( uint16_t targetOutput ){
+  switch(targetOutput){
+ 3b6:	e0 91 21 01 	lds	r30, 0x0121
+ 3ba:	f0 91 22 01 	lds	r31, 0x0122
+ 3be:	ea 30       	cpi	r30, 0x0A	; 10
+ 3c0:	f1 05       	cpc	r31, r1
+ 3c2:	08 f4       	brcc	.+2      	; 0x3c6 <setDigit+0x30>
+ 3c4:	4b c0       	rjmp	.+150    	; 0x45c <setDigit+0xc6>
+ 3c6:	08 95       	ret
+uint8_t inc4Bool = 0x00;
+
+//Digit control low-level code
+void inline SET_DIGIT_ONE(void)   {PORTB |= DIG_SEL_3; PORTB = PORTB & ~(DIG_SEL_1 | DIG_SEL_2);}
+void inline SET_DIGIT_TWO(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2; PORTB = PORTB & ~(DIG_SEL_3);}
+void inline SET_DIGIT_THREE(void) {PORTB |= DIG_SEL_1; PORTB = PORTB & ~(DIG_SEL_2 | DIG_SEL_3);}
+ 3c8:	c4 9a       	sbi	0x18, 4	; 24
+ 3ca:	88 b3       	in	r24, 0x18	; 24
+ 3cc:	8f 79       	andi	r24, 0x9F	; 159
+ 3ce:	88 bb       	out	0x18, r24	; 24
+ 3d0:	21 e2       	ldi	r18, 0x21	; 33
+ 3d2:	2a 95       	dec	r18
+ 3d4:	f1 f7       	brne	.-4      	; 0x3d2 <setDigit+0x3c>
+ 3d6:	00 00       	nop
+        setSegment(output[2]);
+      break;
+    case 3:
+      SET_DIGIT_THREE();
+      _delay_us(100);
+      if(counter < 10)
+ 3d8:	80 91 0b 01 	lds	r24, 0x010B
+ 3dc:	90 91 0c 01 	lds	r25, 0x010C
+ 3e0:	0a 97       	sbiw	r24, 0x0a	; 10
+ 3e2:	08 f0       	brcs	.+2      	; 0x3e6 <setDigit+0x50>
+ 3e4:	3f c0       	rjmp	.+126    	; 0x464 <setDigit+0xce>
+  }
+}
+
+//Clears the segments so nothing is being outputted on the port
+void inline clearSegment( void ){
+  PORTA = 0xFF;
+ 3e6:	8f ef       	ldi	r24, 0xFF	; 255
+ 3e8:	8b bb       	out	0x1b, r24	; 27
+ 3ea:	08 95       	ret
+
+//Sets the decoder to choose the appropriate transistor for the appropriate digit. 
+//It also sets the appropriate segment outputs.
+//NOTE: There is an inherient 100uS delay with any call of this function
+void setDigit( uint8_t targetDigit ){ 
+  switch(targetDigit){
+ 3ec:	81 30       	cpi	r24, 0x01	; 1
+ 3ee:	09 f0       	breq	.+2      	; 0x3f2 <setDigit+0x5c>
+ 3f0:	46 c0       	rjmp	.+140    	; 0x47e <setDigit+0xe8>
+uint8_t randoTest = 0;
+uint8_t inc2Bool = 0x00;
+uint8_t inc4Bool = 0x00;
+
+//Digit control low-level code
+void inline SET_DIGIT_ONE(void)   {PORTB |= DIG_SEL_3; PORTB = PORTB & ~(DIG_SEL_1 | DIG_SEL_2);}
+ 3f2:	c6 9a       	sbi	0x18, 6	; 24
+ 3f4:	88 b3       	in	r24, 0x18	; 24
+ 3f6:	8f 7c       	andi	r24, 0xCF	; 207
+ 3f8:	88 bb       	out	0x18, r24	; 24
+ 3fa:	21 e2       	ldi	r18, 0x21	; 33
+ 3fc:	2a 95       	dec	r18
+ 3fe:	f1 f7       	brne	.-4      	; 0x3fc <setDigit+0x66>
+ 400:	00 00       	nop
+    clearSegment();
+
+    case 1:
+      SET_DIGIT_ONE();
+      _delay_us(100);
+      if(counter < 1000)
+ 402:	80 91 0b 01 	lds	r24, 0x010B
+ 406:	90 91 0c 01 	lds	r25, 0x010C
+ 40a:	88 3e       	cpi	r24, 0xE8	; 232
+ 40c:	93 40       	sbci	r25, 0x03	; 3
+ 40e:	58 f3       	brcs	.-42     	; 0x3e6 <setDigit+0x50>
+}
+
+//Outputs the proper segment based on the input number
+//Note: This function only currently supports 0-9 (as alphas were not needed for the assignment)
+void inline setSegment( uint16_t targetOutput ){
+  switch(targetOutput){
+ 410:	e0 91 15 01 	lds	r30, 0x0115
+ 414:	f0 91 16 01 	lds	r31, 0x0116
+ 418:	ea 30       	cpi	r30, 0x0A	; 10
+ 41a:	f1 05       	cpc	r31, r1
+ 41c:	a0 f6       	brcc	.-88     	; 0x3c6 <setDigit+0x30>
+ 41e:	e0 5b       	subi	r30, 0xB0	; 176
+ 420:	ff 4f       	sbci	r31, 0xFF	; 255
+ 422:	0c 94 83 05 	jmp	0xb06	; 0xb06 <__tablejump2__>
+uint8_t inc2Bool = 0x00;
+uint8_t inc4Bool = 0x00;
+
+//Digit control low-level code
+void inline SET_DIGIT_ONE(void)   {PORTB |= DIG_SEL_3; PORTB = PORTB & ~(DIG_SEL_1 | DIG_SEL_2);}
+void inline SET_DIGIT_TWO(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2; PORTB = PORTB & ~(DIG_SEL_3);}
+ 426:	88 b3       	in	r24, 0x18	; 24
+ 428:	80 63       	ori	r24, 0x30	; 48
+ 42a:	88 bb       	out	0x18, r24	; 24
+ 42c:	c6 98       	cbi	0x18, 6	; 24
+ 42e:	81 e2       	ldi	r24, 0x21	; 33
+ 430:	8a 95       	dec	r24
+ 432:	f1 f7       	brne	.-4      	; 0x430 <setDigit+0x9a>
+ 434:	00 00       	nop
+        setSegment(output[1]);
+      break;
+    case 2:
+      SET_DIGIT_TWO();
+      _delay_us(100);
+      if(counter < 100)
+ 436:	80 91 0b 01 	lds	r24, 0x010B
+ 43a:	90 91 0c 01 	lds	r25, 0x010C
+ 43e:	84 36       	cpi	r24, 0x64	; 100
+ 440:	91 05       	cpc	r25, r1
+ 442:	88 f2       	brcs	.-94     	; 0x3e6 <setDigit+0x50>
+}
+
+//Outputs the proper segment based on the input number
+//Note: This function only currently supports 0-9 (as alphas were not needed for the assignment)
+void inline setSegment( uint16_t targetOutput ){
+  switch(targetOutput){
+ 444:	e0 91 19 01 	lds	r30, 0x0119
+ 448:	f0 91 1a 01 	lds	r31, 0x011A
+ 44c:	ea 30       	cpi	r30, 0x0A	; 10
+ 44e:	f1 05       	cpc	r31, r1
+ 450:	08 f0       	brcs	.+2      	; 0x454 <setDigit+0xbe>
+ 452:	b9 cf       	rjmp	.-142    	; 0x3c6 <setDigit+0x30>
+ 454:	e6 5a       	subi	r30, 0xA6	; 166
+ 456:	ff 4f       	sbci	r31, 0xFF	; 255
+ 458:	0c 94 83 05 	jmp	0xb06	; 0xb06 <__tablejump2__>
+ 45c:	ec 59       	subi	r30, 0x9C	; 156
+ 45e:	ff 4f       	sbci	r31, 0xFF	; 255
+ 460:	0c 94 83 05 	jmp	0xb06	; 0xb06 <__tablejump2__>
+ 464:	e0 91 1d 01 	lds	r30, 0x011D
+ 468:	f0 91 1e 01 	lds	r31, 0x011E
+ 46c:	ea 30       	cpi	r30, 0x0A	; 10
+ 46e:	f1 05       	cpc	r31, r1
+ 470:	08 f0       	brcs	.+2      	; 0x474 <setDigit+0xde>
+ 472:	a9 cf       	rjmp	.-174    	; 0x3c6 <setDigit+0x30>
+ 474:	e2 59       	subi	r30, 0x92	; 146
+ 476:	ff 4f       	sbci	r31, 0xFF	; 255
+ 478:	0c 94 83 05 	jmp	0xb06	; 0xb06 <__tablejump2__>
+ 47c:	08 95       	ret
+ 47e:	08 95       	ret
+       break;
+     case 7:
+       PORTA = ~(SEG_A | SEG_B | SEG_C);
+       break;
+     case 8:
+       PORTA = ~(SEG_A | SEG_B | SEG_C | SEG_D | SEG_E | SEG_F | SEG_G);
+ 480:	80 e8       	ldi	r24, 0x80	; 128
+ 482:	8b bb       	out	0x1b, r24	; 27
+ 484:	08 95       	ret
+       break;
+     case 6:
+       PORTA = ~(SEG_A | SEG_C | SEG_D | SEG_E | SEG_F | SEG_G);
+       break;
+     case 7:
+       PORTA = ~(SEG_A | SEG_B | SEG_C);
+ 486:	88 ef       	ldi	r24, 0xF8	; 248
+ 488:	8b bb       	out	0x1b, r24	; 27
+ 48a:	08 95       	ret
+       break;
+     case 5:
+       PORTA = ~(SEG_A | SEG_C | SEG_D | SEG_F | SEG_G);
+       break;
+     case 6:
+       PORTA = ~(SEG_A | SEG_C | SEG_D | SEG_E | SEG_F | SEG_G);
+ 48c:	82 e8       	ldi	r24, 0x82	; 130
+ 48e:	8b bb       	out	0x1b, r24	; 27
+ 490:	08 95       	ret
+       break;
+     case 4:
+       PORTA = ~(SEG_B | SEG_C | SEG_F | SEG_G);
+       break;
+     case 5:
+       PORTA = ~(SEG_A | SEG_C | SEG_D | SEG_F | SEG_G);
+ 492:	82 e9       	ldi	r24, 0x92	; 146
+ 494:	8b bb       	out	0x1b, r24	; 27
+ 496:	08 95       	ret
+       break;
+     case 3:
+       PORTA = ~(SEG_A | SEG_B | SEG_C | SEG_D | SEG_G);  //Changed G to E
+       break;
+     case 4:
+       PORTA = ~(SEG_B | SEG_C | SEG_F | SEG_G);
+ 498:	89 e9       	ldi	r24, 0x99	; 153
+ 49a:	8b bb       	out	0x1b, r24	; 27
+ 49c:	08 95       	ret
+       break;
+     case 2:
+       PORTA = ~(SEG_A | SEG_B | SEG_D | SEG_E | SEG_G);
+       break;
+     case 3:
+       PORTA = ~(SEG_A | SEG_B | SEG_C | SEG_D | SEG_G);  //Changed G to E
+ 49e:	80 eb       	ldi	r24, 0xB0	; 176
+ 4a0:	8b bb       	out	0x1b, r24	; 27
+ 4a2:	08 95       	ret
+       break;
+     case 1:
+       PORTA = ~(SEG_B | SEG_C);
+       break;
+     case 2:
+       PORTA = ~(SEG_A | SEG_B | SEG_D | SEG_E | SEG_G);
+ 4a4:	84 ea       	ldi	r24, 0xA4	; 164
+ 4a6:	8b bb       	out	0x1b, r24	; 27
+ 4a8:	08 95       	ret
+  switch(targetOutput){
+     case 0:
+       PORTA = ~(SEG_A | SEG_B | SEG_C | SEG_D | SEG_E | SEG_F);
+       break;
+     case 1:
+       PORTA = ~(SEG_B | SEG_C);
+ 4aa:	89 ef       	ldi	r24, 0xF9	; 249
+ 4ac:	8b bb       	out	0x1b, r24	; 27
+ 4ae:	08 95       	ret
+//Outputs the proper segment based on the input number
+//Note: This function only currently supports 0-9 (as alphas were not needed for the assignment)
+void inline setSegment( uint16_t targetOutput ){
+  switch(targetOutput){
+     case 0:
+       PORTA = ~(SEG_A | SEG_B | SEG_C | SEG_D | SEG_E | SEG_F);
+ 4b0:	80 ec       	ldi	r24, 0xC0	; 192
+ 4b2:	8b bb       	out	0x1b, r24	; 27
+ 4b4:	08 95       	ret
+       break;
+     case 8:
+       PORTA = ~(SEG_A | SEG_B | SEG_C | SEG_D | SEG_E | SEG_F | SEG_G);
+       break;
+     case 9:
+       PORTA = ~(SEG_A | SEG_B | SEG_C | SEG_F | SEG_G);
+ 4b6:	88 e9       	ldi	r24, 0x98	; 152
+ 4b8:	8b bb       	out	0x1b, r24	; 27
+ 4ba:	08 95       	ret
+
+000004bc <processButtonPress>:
+
+  //if(counter >= 1024){
+  //  counter -= 1023;
+  //}
+
+  uint8_t temp = 0xFF - PINA;
+ 4bc:	89 b3       	in	r24, 0x19	; 25
+ 4be:	80 95       	com	r24
+
+  switch(temp){
+ 4c0:	81 30       	cpi	r24, 0x01	; 1
+ 4c2:	79 f0       	breq	.+30     	; 0x4e2 <processButtonPress+0x26>
+ 4c4:	82 30       	cpi	r24, 0x02	; 2
+ 4c6:	61 f4       	brne	.+24     	; 0x4e0 <processButtonPress+0x24>
+    case 0x01:
+      inc2Bool ^= 0x01;
+      bargraphOutput ^= (1 << 0);
+      break;
+    case 0x02:
+      inc4Bool ^= 0x01;
+ 4c8:	20 91 08 01 	lds	r18, 0x0108
+ 4cc:	91 e0       	ldi	r25, 0x01	; 1
+ 4ce:	92 27       	eor	r25, r18
+ 4d0:	90 93 08 01 	sts	0x0108, r25
+      bargraphOutput ^= (1 << 1);
+ 4d4:	90 91 02 01 	lds	r25, 0x0102
+ 4d8:	89 27       	eor	r24, r25
+ 4da:	80 93 02 01 	sts	0x0102, r24
+ 4de:	08 95       	ret
+ 4e0:	08 95       	ret
+
+  uint8_t temp = 0xFF - PINA;
+
+  switch(temp){
+    case 0x01:
+      inc2Bool ^= 0x01;
+ 4e2:	90 91 09 01 	lds	r25, 0x0109
+ 4e6:	98 27       	eor	r25, r24
+ 4e8:	90 93 09 01 	sts	0x0109, r25
+      bargraphOutput ^= (1 << 0);
+ 4ec:	90 91 02 01 	lds	r25, 0x0102
+ 4f0:	89 27       	eor	r24, r25
+ 4f2:	80 93 02 01 	sts	0x0102, r24
+ 4f6:	08 95       	ret
+
+000004f8 <processCounterOutput>:
+
+}  
+ 
+//This function processess the output of the counter variable.
+//It checks for overflow conditions, and then calculates the numbers to be outputted on each 7 segment digit
+void processCounterOutput( void ){
+ 4f8:	4f 92       	push	r4
+ 4fa:	5f 92       	push	r5
+ 4fc:	6f 92       	push	r6
+ 4fe:	7f 92       	push	r7
+ 500:	8f 92       	push	r8
+ 502:	9f 92       	push	r9
+ 504:	af 92       	push	r10
+ 506:	bf 92       	push	r11
+ 508:	cf 92       	push	r12
+ 50a:	df 92       	push	r13
+ 50c:	ef 92       	push	r14
+ 50e:	ff 92       	push	r15
+  //We want to check for overflow/underflow here
+  if(counter < 10000 && counter > 1023) //Check for simple overflow
+ 510:	c0 90 0b 01 	lds	r12, 0x010B
+ 514:	d0 90 0c 01 	lds	r13, 0x010C
+ 518:	c6 01       	movw	r24, r12
+ 51a:	94 50       	subi	r25, 0x04	; 4
+ 51c:	80 31       	cpi	r24, 0x10	; 16
+ 51e:	93 42       	sbci	r25, 0x23	; 35
+ 520:	08 f0       	brcs	.+2      	; 0x524 <processCounterOutput+0x2c>
+ 522:	9e c0       	rjmp	.+316    	; 0x660 <processCounterOutput+0x168>
+    counter = (counter % 1024) + 1;
+ 524:	83 e0       	ldi	r24, 0x03	; 3
+ 526:	d8 22       	and	r13, r24
+ 528:	2f ef       	ldi	r18, 0xFF	; 255
+ 52a:	c2 1a       	sub	r12, r18
+ 52c:	d2 0a       	sbc	r13, r18
+ 52e:	d0 92 0c 01 	sts	0x010C, r13
+ 532:	c0 92 0b 01 	sts	0x010B, r12
+ 536:	96 01       	movw	r18, r12
+ 538:	ad ec       	ldi	r26, 0xCD	; 205
+ 53a:	bc ec       	ldi	r27, 0xCC	; 204
+ 53c:	0e 94 8c 05 	call	0xb18	; 0xb18 <__umulhisi3>
+ 540:	2c 01       	movw	r4, r24
+ 542:	56 94       	lsr	r5
+ 544:	47 94       	ror	r4
+ 546:	56 94       	lsr	r5
+ 548:	47 94       	ror	r4
+ 54a:	56 94       	lsr	r5
+ 54c:	47 94       	ror	r4
+ 54e:	92 01       	movw	r18, r4
+ 550:	22 0f       	add	r18, r18
+ 552:	33 1f       	adc	r19, r19
+ 554:	c2 01       	movw	r24, r4
+ 556:	88 0f       	add	r24, r24
+ 558:	99 1f       	adc	r25, r25
+ 55a:	88 0f       	add	r24, r24
+ 55c:	99 1f       	adc	r25, r25
+ 55e:	88 0f       	add	r24, r24
+ 560:	99 1f       	adc	r25, r25
+ 562:	82 0f       	add	r24, r18
+ 564:	93 1f       	adc	r25, r19
+ 566:	c8 1a       	sub	r12, r24
+ 568:	d9 0a       	sbc	r13, r25
+ 56a:	e1 2c       	mov	r14, r1
+ 56c:	f1 2c       	mov	r15, r1
+ 56e:	92 01       	movw	r18, r4
+ 570:	0e 94 8c 05 	call	0xb18	; 0xb18 <__umulhisi3>
+ 574:	4c 01       	movw	r8, r24
+ 576:	96 94       	lsr	r9
+ 578:	87 94       	ror	r8
+ 57a:	96 94       	lsr	r9
+ 57c:	87 94       	ror	r8
+ 57e:	96 94       	lsr	r9
+ 580:	87 94       	ror	r8
+ 582:	94 01       	movw	r18, r8
+ 584:	22 0f       	add	r18, r18
+ 586:	33 1f       	adc	r19, r19
+ 588:	c4 01       	movw	r24, r8
+ 58a:	88 0f       	add	r24, r24
+ 58c:	99 1f       	adc	r25, r25
+ 58e:	88 0f       	add	r24, r24
+ 590:	99 1f       	adc	r25, r25
+ 592:	88 0f       	add	r24, r24
+ 594:	99 1f       	adc	r25, r25
+ 596:	82 0f       	add	r24, r18
+ 598:	93 1f       	adc	r25, r19
+ 59a:	48 1a       	sub	r4, r24
+ 59c:	59 0a       	sbc	r5, r25
+ 59e:	61 2c       	mov	r6, r1
+ 5a0:	71 2c       	mov	r7, r1
+ 5a2:	94 01       	movw	r18, r8
+ 5a4:	0e 94 8c 05 	call	0xb18	; 0xb18 <__umulhisi3>
+ 5a8:	ac 01       	movw	r20, r24
+ 5aa:	56 95       	lsr	r21
+ 5ac:	47 95       	ror	r20
+ 5ae:	56 95       	lsr	r21
+ 5b0:	47 95       	ror	r20
+ 5b2:	56 95       	lsr	r21
+ 5b4:	47 95       	ror	r20
+ 5b6:	9a 01       	movw	r18, r20
+ 5b8:	22 0f       	add	r18, r18
+ 5ba:	33 1f       	adc	r19, r19
+ 5bc:	ca 01       	movw	r24, r20
+ 5be:	88 0f       	add	r24, r24
+ 5c0:	99 1f       	adc	r25, r25
+ 5c2:	88 0f       	add	r24, r24
+ 5c4:	99 1f       	adc	r25, r25
+ 5c6:	88 0f       	add	r24, r24
+ 5c8:	99 1f       	adc	r25, r25
+ 5ca:	82 0f       	add	r24, r18
+ 5cc:	93 1f       	adc	r25, r19
+ 5ce:	88 1a       	sub	r8, r24
+ 5d0:	99 0a       	sbc	r9, r25
+ 5d2:	a1 2c       	mov	r10, r1
+ 5d4:	b1 2c       	mov	r11, r1
+ 5d6:	9a 01       	movw	r18, r20
+ 5d8:	0e 94 8c 05 	call	0xb18	; 0xb18 <__umulhisi3>
+ 5dc:	96 95       	lsr	r25
+ 5de:	87 95       	ror	r24
+ 5e0:	96 95       	lsr	r25
+ 5e2:	87 95       	ror	r24
+ 5e4:	96 95       	lsr	r25
+ 5e6:	87 95       	ror	r24
+ 5e8:	9c 01       	movw	r18, r24
+ 5ea:	22 0f       	add	r18, r18
+ 5ec:	33 1f       	adc	r19, r19
+ 5ee:	88 0f       	add	r24, r24
+ 5f0:	99 1f       	adc	r25, r25
+ 5f2:	88 0f       	add	r24, r24
+ 5f4:	99 1f       	adc	r25, r25
+ 5f6:	88 0f       	add	r24, r24
+ 5f8:	99 1f       	adc	r25, r25
+ 5fa:	82 0f       	add	r24, r18
+ 5fc:	93 1f       	adc	r25, r19
+ 5fe:	48 1b       	sub	r20, r24
+ 600:	59 0b       	sbc	r21, r25
+ 602:	60 e0       	ldi	r22, 0x00	; 0
+ 604:	70 e0       	ldi	r23, 0x00	; 0
+  //We want to calculate the presses here, and not every time, as they can take some time,
+  //and the user will be more tolerable of a slight sutter at a button press, but not every
+  //execution cycle. (In theory. In practice, this math will be unnoticable). 
+  uint16_t tempCounter = counter;
+  //calculate new output values
+  output[4] = tempCounter % 10;
+ 606:	c0 92 21 01 	sts	0x0121, r12
+ 60a:	d0 92 22 01 	sts	0x0122, r13
+ 60e:	e0 92 23 01 	sts	0x0123, r14
+ 612:	f0 92 24 01 	sts	0x0124, r15
+  tempCounter /= 10;
+  output[3] = tempCounter % 10;
+ 616:	40 92 1d 01 	sts	0x011D, r4
+ 61a:	50 92 1e 01 	sts	0x011E, r5
+ 61e:	60 92 1f 01 	sts	0x011F, r6
+ 622:	70 92 20 01 	sts	0x0120, r7
+  tempCounter /= 10;
+  output[2] = tempCounter % 10;
+ 626:	80 92 19 01 	sts	0x0119, r8
+ 62a:	90 92 1a 01 	sts	0x011A, r9
+ 62e:	a0 92 1b 01 	sts	0x011B, r10
+ 632:	b0 92 1c 01 	sts	0x011C, r11
+  tempCounter /= 10;
+  output[1] = tempCounter % 10;
+ 636:	40 93 15 01 	sts	0x0115, r20
+ 63a:	50 93 16 01 	sts	0x0116, r21
+ 63e:	60 93 17 01 	sts	0x0117, r22
+ 642:	70 93 18 01 	sts	0x0118, r23
+
+}
+ 646:	ff 90       	pop	r15
+ 648:	ef 90       	pop	r14
+ 64a:	df 90       	pop	r13
+ 64c:	cf 90       	pop	r12
+ 64e:	bf 90       	pop	r11
+ 650:	af 90       	pop	r10
+ 652:	9f 90       	pop	r9
+ 654:	8f 90       	pop	r8
+ 656:	7f 90       	pop	r7
+ 658:	6f 90       	pop	r6
+ 65a:	5f 90       	pop	r5
+ 65c:	4f 90       	pop	r4
+ 65e:	08 95       	ret
+void processCounterOutput( void ){
+  //We want to check for overflow/underflow here
+  if(counter < 10000 && counter > 1023) //Check for simple overflow
+    counter = (counter % 1024) + 1;
+ 
+  if(counter > 10000) //Check for overflow, because variable is a uint, it will wrap around
+ 660:	81 e1       	ldi	r24, 0x11	; 17
+ 662:	c8 16       	cp	r12, r24
+ 664:	87 e2       	ldi	r24, 0x27	; 39
+ 666:	d8 06       	cpc	r13, r24
+ 668:	08 f4       	brcc	.+2      	; 0x66c <processCounterOutput+0x174>
+ 66a:	65 cf       	rjmp	.-310    	; 0x536 <processCounterOutput+0x3e>
+    counter = 1023;
+ 66c:	8f ef       	ldi	r24, 0xFF	; 255
+ 66e:	93 e0       	ldi	r25, 0x03	; 3
+ 670:	90 93 0c 01 	sts	0x010C, r25
+ 674:	80 93 0b 01 	sts	0x010B, r24
+ 678:	41 e0       	ldi	r20, 0x01	; 1
+ 67a:	50 e0       	ldi	r21, 0x00	; 0
+ 67c:	60 e0       	ldi	r22, 0x00	; 0
+ 67e:	70 e0       	ldi	r23, 0x00	; 0
+ 680:	81 2c       	mov	r8, r1
+ 682:	91 2c       	mov	r9, r1
+ 684:	54 01       	movw	r10, r8
+ 686:	82 e0       	ldi	r24, 0x02	; 2
+ 688:	48 2e       	mov	r4, r24
+ 68a:	51 2c       	mov	r5, r1
+ 68c:	61 2c       	mov	r6, r1
+ 68e:	71 2c       	mov	r7, r1
+ 690:	93 e0       	ldi	r25, 0x03	; 3
+ 692:	c9 2e       	mov	r12, r25
+ 694:	d1 2c       	mov	r13, r1
+ 696:	e1 2c       	mov	r14, r1
+ 698:	f1 2c       	mov	r15, r1
+ 69a:	b5 cf       	rjmp	.-150    	; 0x606 <processCounterOutput+0x10e>
+
+0000069c <checkButtons>:
+//Tri-State Buffer Enable
+void inline ENABLE_BUFFER(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2 | DIG_SEL_3;}
+
+//Port A Control
+void inline ENABLE_LED_CONTROL(void) {DDRA = 0xFF; SET_DIGIT_THREE(); PORTB |= DIG_SEL_3;} //Enables PORTA as an output, while also ensuring the Tri-state buffer is disabled by selecting digit one
+void inline ENABLE_BUTTON_READ(void) {DDRA = 0x00; PORTA = 0xFF;}  //Enable inputs/pullups on PORTA
+ 69c:	1a ba       	out	0x1a, r1	; 26
+ 69e:	8f ef       	ldi	r24, 0xFF	; 255
+ 6a0:	8b bb       	out	0x1b, r24	; 27
+void inline SET_DIGIT_TWO(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2; PORTB = PORTB & ~(DIG_SEL_3);}
+void inline SET_DIGIT_THREE(void) {PORTB |= DIG_SEL_1; PORTB = PORTB & ~(DIG_SEL_2 | DIG_SEL_3);}
+void inline SET_DIGIT_FOUR(void)  {PORTB = PORTB & ~(DIG_SEL_1 | DIG_SEL_2 | DIG_SEL_3);}
+
+//Tri-State Buffer Enable
+void inline ENABLE_BUFFER(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2 | DIG_SEL_3;}
+ 6a2:	88 b3       	in	r24, 0x18	; 24
+ 6a4:	80 67       	ori	r24, 0x70	; 112
+ 6a6:	88 bb       	out	0x18, r24	; 24
+ 6a8:	00 c0       	rjmp	.+0      	; 0x6aa <checkButtons+0xe>
+ 6aa:	00 c0       	rjmp	.+0      	; 0x6ac <checkButtons+0x10>
+ 6ac:	00 00       	nop
+  _delay_us(5); //Essentially a nop? No way. Not a nop. Dear god not at all. Same principle, though. Wait for voltages to settle.
+
+  //Latching button debounce
+  //The delay from the for loop at the beginning of this while(1) block will handle
+  //most of the important debouncing delay, so we can just use a latch here.
+  if(PINA != 0xFF){ //If the buttons read anything
+ 6ae:	89 b3       	in	r24, 0x19	; 25
+ 6b0:	8f 3f       	cpi	r24, 0xFF	; 255
+ 6b2:	41 f1       	breq	.+80     	; 0x704 <checkButtons+0x68>
+    if(unpressed){
+ 6b4:	80 91 01 01 	lds	r24, 0x0101
+ 6b8:	81 11       	cpse	r24, r1
+ 6ba:	2f c0       	rjmp	.+94     	; 0x71a <checkButtons+0x7e>
+      processButtonPress();
+      unpressed = 0; //Latches the button press
+    }
+    else if(PINA == lastEntered){ //Don't preform any action
+ 6bc:	89 b3       	in	r24, 0x19	; 25
+ 6be:	20 91 06 01 	lds	r18, 0x0106
+ 6c2:	30 91 07 01 	lds	r19, 0x0107
+ 6c6:	90 e0       	ldi	r25, 0x00	; 0
+ 6c8:	82 17       	cp	r24, r18
+ 6ca:	93 07       	cpc	r25, r19
+ 6cc:	59 f1       	breq	.+86     	; 0x724 <checkButtons+0x88>
+      ++debounceCounter;
+    }
+    else if(PINA != lastEntered){
+ 6ce:	89 b3       	in	r24, 0x19	; 25
+ 6d0:	90 e0       	ldi	r25, 0x00	; 0
+ 6d2:	28 17       	cp	r18, r24
+ 6d4:	39 07       	cpc	r19, r25
+ 6d6:	41 f0       	breq	.+16     	; 0x6e8 <checkButtons+0x4c>
+      processButtonPress();
+ 6d8:	0e 94 5e 02 	call	0x4bc	; 0x4bc <processButtonPress>
+      debounceCounter = 1;
+ 6dc:	81 e0       	ldi	r24, 0x01	; 1
+ 6de:	90 e0       	ldi	r25, 0x00	; 0
+ 6e0:	90 93 05 01 	sts	0x0105, r25
+ 6e4:	80 93 04 01 	sts	0x0104, r24
+    }
+
+    lastEntered = PINA;
+ 6e8:	89 b3       	in	r24, 0x19	; 25
+ 6ea:	90 e0       	ldi	r25, 0x00	; 0
+ 6ec:	90 93 07 01 	sts	0x0107, r25
+ 6f0:	80 93 06 01 	sts	0x0106, r24
+
+//Tri-State Buffer Enable
+void inline ENABLE_BUFFER(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2 | DIG_SEL_3;}
+
+//Port A Control
+void inline ENABLE_LED_CONTROL(void) {DDRA = 0xFF; SET_DIGIT_THREE(); PORTB |= DIG_SEL_3;} //Enables PORTA as an output, while also ensuring the Tri-state buffer is disabled by selecting digit one
+ 6f4:	8f ef       	ldi	r24, 0xFF	; 255
+ 6f6:	8a bb       	out	0x1a, r24	; 26
+uint8_t inc4Bool = 0x00;
+
+//Digit control low-level code
+void inline SET_DIGIT_ONE(void)   {PORTB |= DIG_SEL_3; PORTB = PORTB & ~(DIG_SEL_1 | DIG_SEL_2);}
+void inline SET_DIGIT_TWO(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2; PORTB = PORTB & ~(DIG_SEL_3);}
+void inline SET_DIGIT_THREE(void) {PORTB |= DIG_SEL_1; PORTB = PORTB & ~(DIG_SEL_2 | DIG_SEL_3);}
+ 6f8:	c4 9a       	sbi	0x18, 4	; 24
+ 6fa:	88 b3       	in	r24, 0x18	; 24
+ 6fc:	8f 79       	andi	r24, 0x9F	; 159
+ 6fe:	88 bb       	out	0x18, r24	; 24
+
+//Tri-State Buffer Enable
+void inline ENABLE_BUFFER(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2 | DIG_SEL_3;}
+
+//Port A Control
+void inline ENABLE_LED_CONTROL(void) {DDRA = 0xFF; SET_DIGIT_THREE(); PORTB |= DIG_SEL_3;} //Enables PORTA as an output, while also ensuring the Tri-state buffer is disabled by selecting digit one
+ 700:	c6 9a       	sbi	0x18, 6	; 24
+ 702:	08 95       	ret
+    }
+
+    lastEntered = PINA;
+  }
+  else {
+    unpressed = 1;  //Release the latch
+ 704:	81 e0       	ldi	r24, 0x01	; 1
+ 706:	80 93 01 01 	sts	0x0101, r24
+
+//Tri-State Buffer Enable
+void inline ENABLE_BUFFER(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2 | DIG_SEL_3;}
+
+//Port A Control
+void inline ENABLE_LED_CONTROL(void) {DDRA = 0xFF; SET_DIGIT_THREE(); PORTB |= DIG_SEL_3;} //Enables PORTA as an output, while also ensuring the Tri-state buffer is disabled by selecting digit one
+ 70a:	8f ef       	ldi	r24, 0xFF	; 255
+ 70c:	8a bb       	out	0x1a, r24	; 26
+uint8_t inc4Bool = 0x00;
+
+//Digit control low-level code
+void inline SET_DIGIT_ONE(void)   {PORTB |= DIG_SEL_3; PORTB = PORTB & ~(DIG_SEL_1 | DIG_SEL_2);}
+void inline SET_DIGIT_TWO(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2; PORTB = PORTB & ~(DIG_SEL_3);}
+void inline SET_DIGIT_THREE(void) {PORTB |= DIG_SEL_1; PORTB = PORTB & ~(DIG_SEL_2 | DIG_SEL_3);}
+ 70e:	c4 9a       	sbi	0x18, 4	; 24
+ 710:	88 b3       	in	r24, 0x18	; 24
+ 712:	8f 79       	andi	r24, 0x9F	; 159
+ 714:	88 bb       	out	0x18, r24	; 24
+
+//Tri-State Buffer Enable
+void inline ENABLE_BUFFER(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2 | DIG_SEL_3;}
+
+//Port A Control
+void inline ENABLE_LED_CONTROL(void) {DDRA = 0xFF; SET_DIGIT_THREE(); PORTB |= DIG_SEL_3;} //Enables PORTA as an output, while also ensuring the Tri-state buffer is disabled by selecting digit one
+ 716:	c6 9a       	sbi	0x18, 6	; 24
+ 718:	08 95       	ret
+  //Latching button debounce
+  //The delay from the for loop at the beginning of this while(1) block will handle
+  //most of the important debouncing delay, so we can just use a latch here.
+  if(PINA != 0xFF){ //If the buttons read anything
+    if(unpressed){
+      processButtonPress();
+ 71a:	0e 94 5e 02 	call	0x4bc	; 0x4bc <processButtonPress>
+      unpressed = 0; //Latches the button press
+ 71e:	10 92 01 01 	sts	0x0101, r1
+ 722:	e2 cf       	rjmp	.-60     	; 0x6e8 <checkButtons+0x4c>
+    }
+    else if(PINA == lastEntered){ //Don't preform any action
+      ++debounceCounter;
+ 724:	80 91 04 01 	lds	r24, 0x0104
+ 728:	90 91 05 01 	lds	r25, 0x0105
+ 72c:	01 96       	adiw	r24, 0x01	; 1
+ 72e:	90 93 05 01 	sts	0x0105, r25
+ 732:	80 93 04 01 	sts	0x0104, r24
+ 736:	d8 cf       	rjmp	.-80     	; 0x6e8 <checkButtons+0x4c>
+
+00000738 <updateSPI>:
+
+//Port A Control
+void inline ENABLE_LED_CONTROL(void) {DDRA = 0xFF; SET_DIGIT_THREE(); PORTB |= DIG_SEL_3;} //Enables PORTA as an output, while also ensuring the Tri-state buffer is disabled by selecting digit one
+void inline ENABLE_BUTTON_READ(void) {DDRA = 0x00; PORTA = 0xFF;}  //Enable inputs/pullups on PORTA
+
+void inline ENC_CLK_ENABLE(void)  {PORTE &= ~(0x40);}
+ 738:	1e 98       	cbi	0x03, 6	; 3
+void inline ENC_CLK_DISABLE(void) {PORTE |=   0x40 ;}
+
+void inline ENC_PARALLEL_ENABLE(void)  {PORTE &= ~(0x80);}
+void inline ENC_PARALLEL_DISABLE(void) {PORTE |=   0x80 ;}
+ 73a:	1f 9a       	sbi	0x03, 7	; 3
+void inline updateSPI( void ){
+  
+  ENC_CLK_ENABLE();        //Allow us to read in serial data
+  ENC_PARALLEL_DISABLE();  //Allow us to read in serial data
+
+  NOP();
+ 73c:	00 00       	nop
+  NOP();
+ 73e:	00 00       	nop
+
+  SPDR = bargraphOutput;
+ 740:	80 91 02 01 	lds	r24, 0x0102
+ 744:	8f b9       	out	0x0f, r24	; 15
+  lastEncoderValue = SPDR;
+ 746:	8f b1       	in	r24, 0x0f	; 15
+ 748:	80 93 00 01 	sts	0x0100, r24
+
+  //Wait for SPI operation
+  while (bit_is_clear(SPSR, SPIF)){};
+ 74c:	77 9b       	sbis	0x0e, 7	; 14
+ 74e:	fe cf       	rjmp	.-4      	; 0x74c <updateSPI+0x14>
+
+  upToDateEncoderValue = 1;
+ 750:	81 e0       	ldi	r24, 0x01	; 1
+ 752:	80 93 03 01 	sts	0x0103, r24
+//Port A Control
+void inline ENABLE_LED_CONTROL(void) {DDRA = 0xFF; SET_DIGIT_THREE(); PORTB |= DIG_SEL_3;} //Enables PORTA as an output, while also ensuring the Tri-state buffer is disabled by selecting digit one
+void inline ENABLE_BUTTON_READ(void) {DDRA = 0x00; PORTA = 0xFF;}  //Enable inputs/pullups on PORTA
+
+void inline ENC_CLK_ENABLE(void)  {PORTE &= ~(0x40);}
+void inline ENC_CLK_DISABLE(void) {PORTE |=   0x40 ;}
+ 756:	1e 9a       	sbi	0x03, 6	; 3
+
+void inline ENC_PARALLEL_ENABLE(void)  {PORTE &= ~(0x80);}
+ 758:	1f 98       	cbi	0x03, 7	; 3
+
+  ENC_CLK_DISABLE();
+  ENC_PARALLEL_ENABLE();
+
+  //Output the bar graph info
+  PORTB |=  0x01;
+ 75a:	c0 9a       	sbi	0x18, 0	; 24
+  PORTB &= ~0x01;
+ 75c:	c0 98       	cbi	0x18, 0	; 24
+ 75e:	08 95       	ret
+
+00000760 <processEncoders>:
+  uint8_t static lEncoderPrev = 0;
+  uint8_t static rEncoderPrev = 0;
+  uint8_t static lEncoder = 0;
+  uint8_t static rEncoder = 0;
+  
+  lEncoderPrev = lEncoder;
+ 760:	30 91 10 01 	lds	r19, 0x0110
+ 764:	30 93 0f 01 	sts	0x010F, r19
+  rEncoderPrev = rEncoder;
+ 768:	20 91 0e 01 	lds	r18, 0x010E
+ 76c:	20 93 0d 01 	sts	0x010D, r18
+
+  //Save previous values
+
+  lEncoder =  (lastEncoderValue & 0x03);
+ 770:	80 91 00 01 	lds	r24, 0x0100
+ 774:	48 2f       	mov	r20, r24
+ 776:	43 70       	andi	r20, 0x03	; 3
+ 778:	40 93 10 01 	sts	0x0110, r20
+  rEncoder = ((lastEncoderValue & 0x0C) >> 2);
+ 77c:	8c 70       	andi	r24, 0x0C	; 12
+ 77e:	90 e0       	ldi	r25, 0x00	; 0
+ 780:	95 95       	asr	r25
+ 782:	87 95       	ror	r24
+ 784:	95 95       	asr	r25
+ 786:	87 95       	ror	r24
+ 788:	98 2f       	mov	r25, r24
+ 78a:	80 93 0e 01 	sts	0x010E, r24
+
+  //bargraphOutput = rEncoder;
+
+  //Check if the values have changed, if so process them
+  if(lEncoder != lEncoderPrev){
+ 78e:	34 17       	cp	r19, r20
+ 790:	29 f0       	breq	.+10     	; 0x79c <processEncoders+0x3c>
+    if((lEncoderPrev == 0x01) && (lEncoder == 0x03))
+ 792:	31 30       	cpi	r19, 0x01	; 1
+ 794:	09 f4       	brne	.+2      	; 0x798 <processEncoders+0x38>
+ 796:	3d c0       	rjmp	.+122    	; 0x812 <processEncoders+0xb2>
+      ENC_L_COUNTUP();
+    if((lEncoderPrev == 0x02) && (lEncoder == 0x03))
+ 798:	32 30       	cpi	r19, 0x02	; 2
+ 79a:	51 f0       	breq	.+20     	; 0x7b0 <processEncoders+0x50>
+      ENC_L_COUNTDOWN();
+  }
+
+  if(rEncoder != rEncoderPrev){
+ 79c:	29 17       	cp	r18, r25
+ 79e:	39 f0       	breq	.+14     	; 0x7ae <processEncoders+0x4e>
+    if((rEncoderPrev == 0x01) && (rEncoder == 0x03))
+ 7a0:	21 30       	cpi	r18, 0x01	; 1
+ 7a2:	f9 f0       	breq	.+62     	; 0x7e2 <processEncoders+0x82>
+      ENC_R_COUNTUP();
+    if((rEncoderPrev == 0x02) && (rEncoder == 0x03))
+ 7a4:	22 30       	cpi	r18, 0x02	; 2
+ 7a6:	19 f4       	brne	.+6      	; 0x7ae <processEncoders+0x4e>
+ 7a8:	93 30       	cpi	r25, 0x03	; 3
+ 7aa:	09 f4       	brne	.+2      	; 0x7ae <processEncoders+0x4e>
+ 7ac:	4b c0       	rjmp	.+150    	; 0x844 <processEncoders+0xe4>
+ 7ae:	08 95       	ret
+
+  //Check if the values have changed, if so process them
+  if(lEncoder != lEncoderPrev){
+    if((lEncoderPrev == 0x01) && (lEncoder == 0x03))
+      ENC_L_COUNTUP();
+    if((lEncoderPrev == 0x02) && (lEncoder == 0x03))
+ 7b0:	43 30       	cpi	r20, 0x03	; 3
+ 7b2:	a1 f7       	brne	.-24     	; 0x79c <processEncoders+0x3c>
+    
+}
+
+//Called to decrement the counter variable
+void inline decrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+ 7b4:	80 91 09 01 	lds	r24, 0x0109
+ 7b8:	30 91 08 01 	lds	r19, 0x0108
+ 7bc:	43 2f       	mov	r20, r19
+ 7be:	48 23       	and	r20, r24
+ 7c0:	09 f0       	breq	.+2      	; 0x7c4 <processEncoders+0x64>
+ 7c2:	57 c0       	rjmp	.+174    	; 0x872 <processEncoders+0x112>
+    NOP();
+  else if (inc2Bool)
+    counter -= 2;
+ 7c4:	40 91 0b 01 	lds	r20, 0x010B
+ 7c8:	50 91 0c 01 	lds	r21, 0x010C
+
+//Called to decrement the counter variable
+void inline decrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+    NOP();
+  else if (inc2Bool)
+ 7cc:	81 11       	cpse	r24, r1
+ 7ce:	78 c0       	rjmp	.+240    	; 0x8c0 <processEncoders+0x160>
+    counter -= 2;
+  else if (inc4Bool)
+ 7d0:	31 11       	cpse	r19, r1
+ 7d2:	87 c0       	rjmp	.+270    	; 0x8e2 <processEncoders+0x182>
+    counter -= 4;
+  else
+    counter -= 1;
+ 7d4:	41 50       	subi	r20, 0x01	; 1
+ 7d6:	51 09       	sbc	r21, r1
+ 7d8:	50 93 0c 01 	sts	0x010C, r21
+ 7dc:	40 93 0b 01 	sts	0x010B, r20
+ 7e0:	dd cf       	rjmp	.-70     	; 0x79c <processEncoders+0x3c>
+    if((lEncoderPrev == 0x02) && (lEncoder == 0x03))
+      ENC_L_COUNTDOWN();
+  }
+
+  if(rEncoder != rEncoderPrev){
+    if((rEncoderPrev == 0x01) && (rEncoder == 0x03))
+ 7e2:	93 30       	cpi	r25, 0x03	; 3
+ 7e4:	21 f7       	brne	.-56     	; 0x7ae <processEncoders+0x4e>
+  
+}
+
+//Called to increment the counter variable
+void inline incrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+ 7e6:	80 91 09 01 	lds	r24, 0x0109
+ 7ea:	90 91 08 01 	lds	r25, 0x0108
+ 7ee:	29 2f       	mov	r18, r25
+ 7f0:	28 23       	and	r18, r24
+ 7f2:	09 f0       	breq	.+2      	; 0x7f6 <processEncoders+0x96>
+ 7f4:	3c c0       	rjmp	.+120    	; 0x86e <processEncoders+0x10e>
+    NOP();
+  else if (inc2Bool)
+ 7f6:	81 11       	cpse	r24, r1
+ 7f8:	52 c0       	rjmp	.+164    	; 0x89e <processEncoders+0x13e>
+    counter += 2;
+  else if (inc4Bool)
+ 7fa:	91 11       	cpse	r25, r1
+ 7fc:	68 c0       	rjmp	.+208    	; 0x8ce <processEncoders+0x16e>
+    counter += 4;
+  else
+    counter += 1;
+ 7fe:	80 91 0b 01 	lds	r24, 0x010B
+ 802:	90 91 0c 01 	lds	r25, 0x010C
+ 806:	01 96       	adiw	r24, 0x01	; 1
+ 808:	90 93 0c 01 	sts	0x010C, r25
+ 80c:	80 93 0b 01 	sts	0x010B, r24
+ 810:	08 95       	ret
+
+  //bargraphOutput = rEncoder;
+
+  //Check if the values have changed, if so process them
+  if(lEncoder != lEncoderPrev){
+    if((lEncoderPrev == 0x01) && (lEncoder == 0x03))
+ 812:	43 30       	cpi	r20, 0x03	; 3
+ 814:	09 f0       	breq	.+2      	; 0x818 <processEncoders+0xb8>
+ 816:	c2 cf       	rjmp	.-124    	; 0x79c <processEncoders+0x3c>
+  
+}
+
+//Called to increment the counter variable
+void inline incrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+ 818:	80 91 09 01 	lds	r24, 0x0109
+ 81c:	30 91 08 01 	lds	r19, 0x0108
+ 820:	43 2f       	mov	r20, r19
+ 822:	48 23       	and	r20, r24
+ 824:	31 f5       	brne	.+76     	; 0x872 <processEncoders+0x112>
+    NOP();
+  else if (inc2Bool)
+    counter += 2;
+ 826:	40 91 0b 01 	lds	r20, 0x010B
+ 82a:	50 91 0c 01 	lds	r21, 0x010C
+
+//Called to increment the counter variable
+void inline incrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+    NOP();
+  else if (inc2Bool)
+ 82e:	81 11       	cpse	r24, r1
+ 830:	40 c0       	rjmp	.+128    	; 0x8b2 <processEncoders+0x152>
+    counter += 2;
+  else if (inc4Bool)
+ 832:	31 11       	cpse	r19, r1
+ 834:	5d c0       	rjmp	.+186    	; 0x8f0 <processEncoders+0x190>
+    counter += 4;
+  else
+    counter += 1;
+ 836:	4f 5f       	subi	r20, 0xFF	; 255
+ 838:	5f 4f       	sbci	r21, 0xFF	; 255
+ 83a:	50 93 0c 01 	sts	0x010C, r21
+ 83e:	40 93 0b 01 	sts	0x010B, r20
+ 842:	ac cf       	rjmp	.-168    	; 0x79c <processEncoders+0x3c>
+    
+}
+
+//Called to decrement the counter variable
+void inline decrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+ 844:	80 91 09 01 	lds	r24, 0x0109
+ 848:	90 91 08 01 	lds	r25, 0x0108
+ 84c:	29 2f       	mov	r18, r25
+ 84e:	28 23       	and	r18, r24
+ 850:	71 f4       	brne	.+28     	; 0x86e <processEncoders+0x10e>
+    NOP();
+  else if (inc2Bool)
+ 852:	81 11       	cpse	r24, r1
+ 854:	10 c0       	rjmp	.+32     	; 0x876 <processEncoders+0x116>
+    counter -= 2;
+  else if (inc4Bool)
+ 856:	91 11       	cpse	r25, r1
+ 858:	18 c0       	rjmp	.+48     	; 0x88a <processEncoders+0x12a>
+    counter -= 4;
+  else
+    counter -= 1;
+ 85a:	80 91 0b 01 	lds	r24, 0x010B
+ 85e:	90 91 0c 01 	lds	r25, 0x010C
+ 862:	01 97       	sbiw	r24, 0x01	; 1
+ 864:	90 93 0c 01 	sts	0x010C, r25
+ 868:	80 93 0b 01 	sts	0x010B, r24
+ 86c:	08 95       	ret
+}
+
+//Called to decrement the counter variable
+void inline decrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+    NOP();
+ 86e:	00 00       	nop
+ 870:	08 95       	ret
+ 872:	00 00       	nop
+ 874:	93 cf       	rjmp	.-218    	; 0x79c <processEncoders+0x3c>
+  else if (inc2Bool)
+    counter -= 2;
+ 876:	80 91 0b 01 	lds	r24, 0x010B
+ 87a:	90 91 0c 01 	lds	r25, 0x010C
+ 87e:	02 97       	sbiw	r24, 0x02	; 2
+ 880:	90 93 0c 01 	sts	0x010C, r25
+ 884:	80 93 0b 01 	sts	0x010B, r24
+ 888:	08 95       	ret
+  else if (inc4Bool)
+    counter -= 4;
+ 88a:	80 91 0b 01 	lds	r24, 0x010B
+ 88e:	90 91 0c 01 	lds	r25, 0x010C
+ 892:	04 97       	sbiw	r24, 0x04	; 4
+ 894:	90 93 0c 01 	sts	0x010C, r25
+ 898:	80 93 0b 01 	sts	0x010B, r24
+ 89c:	08 95       	ret
+//Called to increment the counter variable
+void inline incrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+    NOP();
+  else if (inc2Bool)
+    counter += 2;
+ 89e:	80 91 0b 01 	lds	r24, 0x010B
+ 8a2:	90 91 0c 01 	lds	r25, 0x010C
+ 8a6:	02 96       	adiw	r24, 0x02	; 2
+ 8a8:	90 93 0c 01 	sts	0x010C, r25
+ 8ac:	80 93 0b 01 	sts	0x010B, r24
+ 8b0:	08 95       	ret
+ 8b2:	4e 5f       	subi	r20, 0xFE	; 254
+ 8b4:	5f 4f       	sbci	r21, 0xFF	; 255
+ 8b6:	50 93 0c 01 	sts	0x010C, r21
+ 8ba:	40 93 0b 01 	sts	0x010B, r20
+ 8be:	6e cf       	rjmp	.-292    	; 0x79c <processEncoders+0x3c>
+//Called to decrement the counter variable
+void inline decrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+    NOP();
+  else if (inc2Bool)
+    counter -= 2;
+ 8c0:	42 50       	subi	r20, 0x02	; 2
+ 8c2:	51 09       	sbc	r21, r1
+ 8c4:	50 93 0c 01 	sts	0x010C, r21
+ 8c8:	40 93 0b 01 	sts	0x010B, r20
+ 8cc:	67 cf       	rjmp	.-306    	; 0x79c <processEncoders+0x3c>
+  if(inc2Bool & inc4Bool)
+    NOP();
+  else if (inc2Bool)
+    counter += 2;
+  else if (inc4Bool)
+    counter += 4;
+ 8ce:	80 91 0b 01 	lds	r24, 0x010B
+ 8d2:	90 91 0c 01 	lds	r25, 0x010C
+ 8d6:	04 96       	adiw	r24, 0x04	; 4
+ 8d8:	90 93 0c 01 	sts	0x010C, r25
+ 8dc:	80 93 0b 01 	sts	0x010B, r24
+ 8e0:	08 95       	ret
+  if(inc2Bool & inc4Bool)
+    NOP();
+  else if (inc2Bool)
+    counter -= 2;
+  else if (inc4Bool)
+    counter -= 4;
+ 8e2:	44 50       	subi	r20, 0x04	; 4
+ 8e4:	51 09       	sbc	r21, r1
+ 8e6:	50 93 0c 01 	sts	0x010C, r21
+ 8ea:	40 93 0b 01 	sts	0x010B, r20
+ 8ee:	56 cf       	rjmp	.-340    	; 0x79c <processEncoders+0x3c>
+  if(inc2Bool & inc4Bool)
+    NOP();
+  else if (inc2Bool)
+    counter += 2;
+  else if (inc4Bool)
+    counter += 4;
+ 8f0:	4c 5f       	subi	r20, 0xFC	; 252
+ 8f2:	5f 4f       	sbci	r21, 0xFF	; 255
+ 8f4:	50 93 0c 01 	sts	0x010C, r21
+ 8f8:	40 93 0b 01 	sts	0x010B, r20
+ 8fc:	4f cf       	rjmp	.-354    	; 0x79c <processEncoders+0x3c>
+
+000008fe <__vector_16>:
+
+}
+
+//Timer 0 overflow vector
+//Polls the buttons / interfaces with SPI
+ISR(TIMER0_OVF_vect){
+ 8fe:	1f 92       	push	r1
+ 900:	0f 92       	push	r0
+ 902:	0f b6       	in	r0, 0x3f	; 63
+ 904:	0f 92       	push	r0
+ 906:	11 24       	eor	r1, r1
+ 908:	0b b6       	in	r0, 0x3b	; 59
+ 90a:	0f 92       	push	r0
+ 90c:	2f 93       	push	r18
+ 90e:	3f 93       	push	r19
+ 910:	4f 93       	push	r20
+ 912:	5f 93       	push	r21
+ 914:	6f 93       	push	r22
+ 916:	7f 93       	push	r23
+ 918:	8f 93       	push	r24
+ 91a:	9f 93       	push	r25
+ 91c:	af 93       	push	r26
+ 91e:	bf 93       	push	r27
+ 920:	ef 93       	push	r30
+ 922:	ff 93       	push	r31
+//Tri-State Buffer Enable
+void inline ENABLE_BUFFER(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2 | DIG_SEL_3;}
+
+//Port A Control
+void inline ENABLE_LED_CONTROL(void) {DDRA = 0xFF; SET_DIGIT_THREE(); PORTB |= DIG_SEL_3;} //Enables PORTA as an output, while also ensuring the Tri-state buffer is disabled by selecting digit one
+void inline ENABLE_BUTTON_READ(void) {DDRA = 0x00; PORTA = 0xFF;}  //Enable inputs/pullups on PORTA
+ 924:	1a ba       	out	0x1a, r1	; 26
+ 926:	8f ef       	ldi	r24, 0xFF	; 255
+ 928:	8b bb       	out	0x1b, r24	; 27
+void inline SET_DIGIT_TWO(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2; PORTB = PORTB & ~(DIG_SEL_3);}
+void inline SET_DIGIT_THREE(void) {PORTB |= DIG_SEL_1; PORTB = PORTB & ~(DIG_SEL_2 | DIG_SEL_3);}
+void inline SET_DIGIT_FOUR(void)  {PORTB = PORTB & ~(DIG_SEL_1 | DIG_SEL_2 | DIG_SEL_3);}
+
+//Tri-State Buffer Enable
+void inline ENABLE_BUFFER(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2 | DIG_SEL_3;}
+ 92a:	88 b3       	in	r24, 0x18	; 24
+ 92c:	80 67       	ori	r24, 0x70	; 112
+ 92e:	88 bb       	out	0x18, r24	; 24
+ 930:	00 c0       	rjmp	.+0      	; 0x932 <__vector_16+0x34>
+ 932:	00 c0       	rjmp	.+0      	; 0x934 <__vector_16+0x36>
+ 934:	00 00       	nop
+  _delay_us(5); //Essentially a nop? No way. Not a nop. Dear god not at all. Same principle, though. Wait for voltages to settle.
+
+  //Latching button debounce
+  //The delay from the for loop at the beginning of this while(1) block will handle
+  //most of the important debouncing delay, so we can just use a latch here.
+  if(PINA != 0xFF){ //If the buttons read anything
+ 936:	89 b3       	in	r24, 0x19	; 25
+ 938:	8f 3f       	cpi	r24, 0xFF	; 255
+ 93a:	09 f4       	brne	.+2      	; 0x93e <__vector_16+0x40>
+ 93c:	50 c0       	rjmp	.+160    	; 0x9de <__vector_16+0xe0>
+    if(unpressed){
+ 93e:	80 91 01 01 	lds	r24, 0x0101
+ 942:	81 11       	cpse	r24, r1
+ 944:	50 c0       	rjmp	.+160    	; 0x9e6 <__vector_16+0xe8>
+      processButtonPress();
+      unpressed = 0; //Latches the button press
+    }
+    else if(PINA == lastEntered){ //Don't preform any action
+ 946:	89 b3       	in	r24, 0x19	; 25
+ 948:	20 91 06 01 	lds	r18, 0x0106
+ 94c:	30 91 07 01 	lds	r19, 0x0107
+ 950:	90 e0       	ldi	r25, 0x00	; 0
+ 952:	82 17       	cp	r24, r18
+ 954:	93 07       	cpc	r25, r19
+ 956:	09 f4       	brne	.+2      	; 0x95a <__vector_16+0x5c>
+ 958:	4b c0       	rjmp	.+150    	; 0x9f0 <__vector_16+0xf2>
+      ++debounceCounter;
+    }
+    else if(PINA != lastEntered){
+ 95a:	89 b3       	in	r24, 0x19	; 25
+ 95c:	90 e0       	ldi	r25, 0x00	; 0
+ 95e:	28 17       	cp	r18, r24
+ 960:	39 07       	cpc	r19, r25
+ 962:	41 f0       	breq	.+16     	; 0x974 <__vector_16+0x76>
+      processButtonPress();
+ 964:	0e 94 5e 02 	call	0x4bc	; 0x4bc <processButtonPress>
+      debounceCounter = 1;
+ 968:	81 e0       	ldi	r24, 0x01	; 1
+ 96a:	90 e0       	ldi	r25, 0x00	; 0
+ 96c:	90 93 05 01 	sts	0x0105, r25
+ 970:	80 93 04 01 	sts	0x0104, r24
+    }
+
+    lastEntered = PINA;
+ 974:	89 b3       	in	r24, 0x19	; 25
+ 976:	90 e0       	ldi	r25, 0x00	; 0
+ 978:	90 93 07 01 	sts	0x0107, r25
+ 97c:	80 93 06 01 	sts	0x0106, r24
+
+//Tri-State Buffer Enable
+void inline ENABLE_BUFFER(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2 | DIG_SEL_3;}
+
+//Port A Control
+void inline ENABLE_LED_CONTROL(void) {DDRA = 0xFF; SET_DIGIT_THREE(); PORTB |= DIG_SEL_3;} //Enables PORTA as an output, while also ensuring the Tri-state buffer is disabled by selecting digit one
+ 980:	8f ef       	ldi	r24, 0xFF	; 255
+ 982:	8a bb       	out	0x1a, r24	; 26
+uint8_t inc4Bool = 0x00;
+
+//Digit control low-level code
+void inline SET_DIGIT_ONE(void)   {PORTB |= DIG_SEL_3; PORTB = PORTB & ~(DIG_SEL_1 | DIG_SEL_2);}
+void inline SET_DIGIT_TWO(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2; PORTB = PORTB & ~(DIG_SEL_3);}
+void inline SET_DIGIT_THREE(void) {PORTB |= DIG_SEL_1; PORTB = PORTB & ~(DIG_SEL_2 | DIG_SEL_3);}
+ 984:	c4 9a       	sbi	0x18, 4	; 24
+ 986:	88 b3       	in	r24, 0x18	; 24
+ 988:	8f 79       	andi	r24, 0x9F	; 159
+ 98a:	88 bb       	out	0x18, r24	; 24
+
+//Tri-State Buffer Enable
+void inline ENABLE_BUFFER(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2 | DIG_SEL_3;}
+
+//Port A Control
+void inline ENABLE_LED_CONTROL(void) {DDRA = 0xFF; SET_DIGIT_THREE(); PORTB |= DIG_SEL_3;} //Enables PORTA as an output, while also ensuring the Tri-state buffer is disabled by selecting digit one
+ 98c:	c6 9a       	sbi	0x18, 6	; 24
+void inline ENABLE_BUTTON_READ(void) {DDRA = 0x00; PORTA = 0xFF;}  //Enable inputs/pullups on PORTA
+
+void inline ENC_CLK_ENABLE(void)  {PORTE &= ~(0x40);}
+ 98e:	1e 98       	cbi	0x03, 6	; 3
+void inline ENC_CLK_DISABLE(void) {PORTE |=   0x40 ;}
+
+void inline ENC_PARALLEL_ENABLE(void)  {PORTE &= ~(0x80);}
+void inline ENC_PARALLEL_DISABLE(void) {PORTE |=   0x80 ;}
+ 990:	1f 9a       	sbi	0x03, 7	; 3
+void inline updateSPI( void ){
+  
+  ENC_CLK_ENABLE();        //Allow us to read in serial data
+  ENC_PARALLEL_DISABLE();  //Allow us to read in serial data
+
+  NOP();
+ 992:	00 00       	nop
+  NOP();
+ 994:	00 00       	nop
+
+  SPDR = bargraphOutput;
+ 996:	80 91 02 01 	lds	r24, 0x0102
+ 99a:	8f b9       	out	0x0f, r24	; 15
+  lastEncoderValue = SPDR;
+ 99c:	8f b1       	in	r24, 0x0f	; 15
+ 99e:	80 93 00 01 	sts	0x0100, r24
+
+  //Wait for SPI operation
+  while (bit_is_clear(SPSR, SPIF)){};
+ 9a2:	77 9b       	sbis	0x0e, 7	; 14
+ 9a4:	fe cf       	rjmp	.-4      	; 0x9a2 <__vector_16+0xa4>
+
+  upToDateEncoderValue = 1;
+ 9a6:	81 e0       	ldi	r24, 0x01	; 1
+ 9a8:	80 93 03 01 	sts	0x0103, r24
+//Port A Control
+void inline ENABLE_LED_CONTROL(void) {DDRA = 0xFF; SET_DIGIT_THREE(); PORTB |= DIG_SEL_3;} //Enables PORTA as an output, while also ensuring the Tri-state buffer is disabled by selecting digit one
+void inline ENABLE_BUTTON_READ(void) {DDRA = 0x00; PORTA = 0xFF;}  //Enable inputs/pullups on PORTA
+
+void inline ENC_CLK_ENABLE(void)  {PORTE &= ~(0x40);}
+void inline ENC_CLK_DISABLE(void) {PORTE |=   0x40 ;}
+ 9ac:	1e 9a       	sbi	0x03, 6	; 3
+
+void inline ENC_PARALLEL_ENABLE(void)  {PORTE &= ~(0x80);}
+ 9ae:	1f 98       	cbi	0x03, 7	; 3
+
+  ENC_CLK_DISABLE();
+  ENC_PARALLEL_ENABLE();
+
+  //Output the bar graph info
+  PORTB |=  0x01;
+ 9b0:	c0 9a       	sbi	0x18, 0	; 24
+  PORTB &= ~0x01;
+ 9b2:	c0 98       	cbi	0x18, 0	; 24
+
+  checkButtons();
+
+  updateSPI();
+  
+  processEncoders();
+ 9b4:	0e 94 b0 03 	call	0x760	; 0x760 <processEncoders>
+}
+ 9b8:	ff 91       	pop	r31
+ 9ba:	ef 91       	pop	r30
+ 9bc:	bf 91       	pop	r27
+ 9be:	af 91       	pop	r26
+ 9c0:	9f 91       	pop	r25
+ 9c2:	8f 91       	pop	r24
+ 9c4:	7f 91       	pop	r23
+ 9c6:	6f 91       	pop	r22
+ 9c8:	5f 91       	pop	r21
+ 9ca:	4f 91       	pop	r20
+ 9cc:	3f 91       	pop	r19
+ 9ce:	2f 91       	pop	r18
+ 9d0:	0f 90       	pop	r0
+ 9d2:	0b be       	out	0x3b, r0	; 59
+ 9d4:	0f 90       	pop	r0
+ 9d6:	0f be       	out	0x3f, r0	; 63
+ 9d8:	0f 90       	pop	r0
+ 9da:	1f 90       	pop	r1
+ 9dc:	18 95       	reti
+    }
+
+    lastEntered = PINA;
+  }
+  else {
+    unpressed = 1;  //Release the latch
+ 9de:	81 e0       	ldi	r24, 0x01	; 1
+ 9e0:	80 93 01 01 	sts	0x0101, r24
+ 9e4:	cd cf       	rjmp	.-102    	; 0x980 <__vector_16+0x82>
+  //Latching button debounce
+  //The delay from the for loop at the beginning of this while(1) block will handle
+  //most of the important debouncing delay, so we can just use a latch here.
+  if(PINA != 0xFF){ //If the buttons read anything
+    if(unpressed){
+      processButtonPress();
+ 9e6:	0e 94 5e 02 	call	0x4bc	; 0x4bc <processButtonPress>
+      unpressed = 0; //Latches the button press
+ 9ea:	10 92 01 01 	sts	0x0101, r1
+ 9ee:	c2 cf       	rjmp	.-124    	; 0x974 <__vector_16+0x76>
+    }
+    else if(PINA == lastEntered){ //Don't preform any action
+      ++debounceCounter;
+ 9f0:	80 91 04 01 	lds	r24, 0x0104
+ 9f4:	90 91 05 01 	lds	r25, 0x0105
+ 9f8:	01 96       	adiw	r24, 0x01	; 1
+ 9fa:	90 93 05 01 	sts	0x0105, r25
+ 9fe:	80 93 04 01 	sts	0x0104, r24
+ a02:	b8 cf       	rjmp	.-144    	; 0x974 <__vector_16+0x76>
+
+00000a04 <incrementCounter>:
+  
+}
+
+//Called to increment the counter variable
+void inline incrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+ a04:	80 91 09 01 	lds	r24, 0x0109
+ a08:	90 91 08 01 	lds	r25, 0x0108
+ a0c:	29 2f       	mov	r18, r25
+ a0e:	28 23       	and	r18, r24
+ a10:	c1 f4       	brne	.+48     	; 0xa42 <incrementCounter+0x3e>
+    NOP();
+  else if (inc2Bool)
+ a12:	81 11       	cpse	r24, r1
+ a14:	0c c0       	rjmp	.+24     	; 0xa2e <incrementCounter+0x2a>
+    counter += 2;
+  else if (inc4Bool)
+ a16:	91 11       	cpse	r25, r1
+ a18:	16 c0       	rjmp	.+44     	; 0xa46 <incrementCounter+0x42>
+    counter += 4;
+  else
+    counter += 1;
+ a1a:	80 91 0b 01 	lds	r24, 0x010B
+ a1e:	90 91 0c 01 	lds	r25, 0x010C
+ a22:	01 96       	adiw	r24, 0x01	; 1
+ a24:	90 93 0c 01 	sts	0x010C, r25
+ a28:	80 93 0b 01 	sts	0x010B, r24
+ a2c:	08 95       	ret
+//Called to increment the counter variable
+void inline incrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+    NOP();
+  else if (inc2Bool)
+    counter += 2;
+ a2e:	80 91 0b 01 	lds	r24, 0x010B
+ a32:	90 91 0c 01 	lds	r25, 0x010C
+ a36:	02 96       	adiw	r24, 0x02	; 2
+ a38:	90 93 0c 01 	sts	0x010C, r25
+ a3c:	80 93 0b 01 	sts	0x010B, r24
+ a40:	08 95       	ret
+}
+
+//Called to increment the counter variable
+void inline incrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+    NOP();
+ a42:	00 00       	nop
+ a44:	08 95       	ret
+  else if (inc2Bool)
+    counter += 2;
+  else if (inc4Bool)
+    counter += 4;
+ a46:	80 91 0b 01 	lds	r24, 0x010B
+ a4a:	90 91 0c 01 	lds	r25, 0x010C
+ a4e:	04 96       	adiw	r24, 0x04	; 4
+ a50:	90 93 0c 01 	sts	0x010C, r25
+ a54:	80 93 0b 01 	sts	0x010B, r24
+ a58:	08 95       	ret
+
+00000a5a <decrementCounter>:
+    
+}
+
+//Called to decrement the counter variable
+void inline decrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+ a5a:	80 91 09 01 	lds	r24, 0x0109
+ a5e:	90 91 08 01 	lds	r25, 0x0108
+ a62:	29 2f       	mov	r18, r25
+ a64:	28 23       	and	r18, r24
+ a66:	c1 f4       	brne	.+48     	; 0xa98 <decrementCounter+0x3e>
+    NOP();
+  else if (inc2Bool)
+ a68:	81 11       	cpse	r24, r1
+ a6a:	0c c0       	rjmp	.+24     	; 0xa84 <decrementCounter+0x2a>
+    counter -= 2;
+  else if (inc4Bool)
+ a6c:	91 11       	cpse	r25, r1
+ a6e:	16 c0       	rjmp	.+44     	; 0xa9c <decrementCounter+0x42>
+    counter -= 4;
+  else
+    counter -= 1;
+ a70:	80 91 0b 01 	lds	r24, 0x010B
+ a74:	90 91 0c 01 	lds	r25, 0x010C
+ a78:	01 97       	sbiw	r24, 0x01	; 1
+ a7a:	90 93 0c 01 	sts	0x010C, r25
+ a7e:	80 93 0b 01 	sts	0x010B, r24
+ a82:	08 95       	ret
+//Called to decrement the counter variable
+void inline decrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+    NOP();
+  else if (inc2Bool)
+    counter -= 2;
+ a84:	80 91 0b 01 	lds	r24, 0x010B
+ a88:	90 91 0c 01 	lds	r25, 0x010C
+ a8c:	02 97       	sbiw	r24, 0x02	; 2
+ a8e:	90 93 0c 01 	sts	0x010C, r25
+ a92:	80 93 0b 01 	sts	0x010B, r24
+ a96:	08 95       	ret
+}
+
+//Called to decrement the counter variable
+void inline decrementCounter( void ){
+  if(inc2Bool & inc4Bool)
+    NOP();
+ a98:	00 00       	nop
+ a9a:	08 95       	ret
+  else if (inc2Bool)
+    counter -= 2;
+  else if (inc4Bool)
+    counter -= 4;
+ a9c:	80 91 0b 01 	lds	r24, 0x010B
+ aa0:	90 91 0c 01 	lds	r25, 0x010C
+ aa4:	04 97       	sbiw	r24, 0x04	; 4
+ aa6:	90 93 0c 01 	sts	0x010C, r25
+ aaa:	80 93 0b 01 	sts	0x010B, r24
+ aae:	08 95       	ret
+
+00000ab0 <main>:
+//Main function call
+int main()
+{
+//set port bits 4-7 B as outputs
+while(1){
+  configureIO();
+ ab0:	0e 94 70 01 	call	0x2e0	; 0x2e0 <configureIO>
+}
+
+//Configures all timer/counters on the device
+void configureTimers( void ){
+  //Timer 0 configure: Polling buttons
+  TIMSK |= (1<<TOIE0); //Enable overflow interrupts
+ ab4:	87 b7       	in	r24, 0x37	; 55
+ ab6:	81 60       	ori	r24, 0x01	; 1
+ ab8:	87 bf       	out	0x37, r24	; 55
+  TCCR0 |= (1<<CS02) | (1<<CS01) | (0<<CS00);  //Normal mode, prescale 
+ aba:	83 b7       	in	r24, 0x33	; 51
+ abc:	86 60       	ori	r24, 0x06	; 6
+ abe:	83 bf       	out	0x33, r24	; 51
+//Setup SPI on the interface
+void configureSPI( void ){
+
+  //Configure SPI
+  //Master mode, clk low on idle, leading edge sample
+  SPCR = (1 << SPE) | (1 << MSTR) | (0 << CPOL) | (0 << CPHA);   
+ ac0:	80 e5       	ldi	r24, 0x50	; 80
+ ac2:	8d b9       	out	0x0d, r24	; 13
+//set port bits 4-7 B as outputs
+while(1){
+  configureIO();
+  configureTimers();
+  configureSPI();
+  sei();
+ ac4:	78 94       	sei
+
+//Tri-State Buffer Enable
+void inline ENABLE_BUFFER(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2 | DIG_SEL_3;}
+
+//Port A Control
+void inline ENABLE_LED_CONTROL(void) {DDRA = 0xFF; SET_DIGIT_THREE(); PORTB |= DIG_SEL_3;} //Enables PORTA as an output, while also ensuring the Tri-state buffer is disabled by selecting digit one
+ ac6:	8f ef       	ldi	r24, 0xFF	; 255
+ ac8:	8a bb       	out	0x1a, r24	; 26
+uint8_t inc4Bool = 0x00;
+
+//Digit control low-level code
+void inline SET_DIGIT_ONE(void)   {PORTB |= DIG_SEL_3; PORTB = PORTB & ~(DIG_SEL_1 | DIG_SEL_2);}
+void inline SET_DIGIT_TWO(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2; PORTB = PORTB & ~(DIG_SEL_3);}
+void inline SET_DIGIT_THREE(void) {PORTB |= DIG_SEL_1; PORTB = PORTB & ~(DIG_SEL_2 | DIG_SEL_3);}
+ aca:	c4 9a       	sbi	0x18, 4	; 24
+ acc:	88 b3       	in	r24, 0x18	; 24
+ ace:	8f 79       	andi	r24, 0x9F	; 159
+ ad0:	88 bb       	out	0x18, r24	; 24
+
+//Tri-State Buffer Enable
+void inline ENABLE_BUFFER(void)   {PORTB |= DIG_SEL_1 | DIG_SEL_2 | DIG_SEL_3;}
+
+//Port A Control
+void inline ENABLE_LED_CONTROL(void) {DDRA = 0xFF; SET_DIGIT_THREE(); PORTB |= DIG_SEL_3;} //Enables PORTA as an output, while also ensuring the Tri-state buffer is disabled by selecting digit one
+ ad2:	c6 9a       	sbi	0x18, 6	; 24
+  }
+}
+
+//Clears the segments so nothing is being outputted on the port
+void inline clearSegment( void ){
+  PORTA = 0xFF;
+ ad4:	df ef       	ldi	r29, 0xFF	; 255
+}
+
+
+//Main function call
+int main()
+{
+ ad6:	0f e0       	ldi	r16, 0x0F	; 15
+ ad8:	10 e0       	ldi	r17, 0x00	; 0
+ ada:	c1 e0       	ldi	r28, 0x01	; 1
+ adc:	80 e1       	ldi	r24, 0x10	; 16
+ ade:	8a 95       	dec	r24
+ ae0:	f1 f7       	brne	.-4      	; 0xade <main+0x2e>
+ ae2:	00 c0       	rjmp	.+0      	; 0xae4 <main+0x34>
+    for(k = 0; k < 15; ++k){
+      for(j = 1; j < 5; ++j){
+        //clearSegment();
+        _delay_us(50);
+	
+	setDigit(j);  //Contains 100uS delay
+ ae4:	8c 2f       	mov	r24, r28
+ ae6:	0e 94 cb 01 	call	0x396	; 0x396 <setDigit>
+ aea:	8b e2       	ldi	r24, 0x2B	; 43
+ aec:	8a 95       	dec	r24
+ aee:	f1 f7       	brne	.-4      	; 0xaec <main+0x3c>
+ af0:	00 00       	nop
+  }
+}
+
+//Clears the segments so nothing is being outputted on the port
+void inline clearSegment( void ){
+  PORTA = 0xFF;
+ af2:	db bb       	out	0x1b, r29	; 27
+ af4:	cf 5f       	subi	r28, 0xFF	; 255
+
+  ENABLE_LED_CONTROL();
+
+  while(1){  //Main control loop
+    for(k = 0; k < 15; ++k){
+      for(j = 1; j < 5; ++j){
+ af6:	c5 30       	cpi	r28, 0x05	; 5
+ af8:	89 f7       	brne	.-30     	; 0xadc <main+0x2c>
+ afa:	01 50       	subi	r16, 0x01	; 1
+ afc:	11 09       	sbc	r17, r1
+  //uint8_t counter = 0;
+
+  ENABLE_LED_CONTROL();
+
+  while(1){  //Main control loop
+    for(k = 0; k < 15; ++k){
+ afe:	69 f7       	brne	.-38     	; 0xada <main+0x2a>
+        clearSegment();
+
+      }
+    }
+	
+    processCounterOutput();  //Doesn't have to happen all of the time, so it's called here.
+ b00:	0e 94 7c 02 	call	0x4f8	; 0x4f8 <processCounterOutput>
+
+  }
+ b04:	e8 cf       	rjmp	.-48     	; 0xad6 <main+0x26>
+
+00000b06 <__tablejump2__>:
+ b06:	ee 0f       	add	r30, r30
+ b08:	ff 1f       	adc	r31, r31
+ b0a:	00 24       	eor	r0, r0
+ b0c:	00 1c       	adc	r0, r0
+ b0e:	0b be       	out	0x3b, r0	; 59
+ b10:	07 90       	elpm	r0, Z+
+ b12:	f6 91       	elpm	r31, Z
+ b14:	e0 2d       	mov	r30, r0
+ b16:	09 94       	ijmp
+
+00000b18 <__umulhisi3>:
+ b18:	a2 9f       	mul	r26, r18
+ b1a:	b0 01       	movw	r22, r0
+ b1c:	b3 9f       	mul	r27, r19
+ b1e:	c0 01       	movw	r24, r0
+ b20:	a3 9f       	mul	r26, r19
+ b22:	70 0d       	add	r23, r0
+ b24:	81 1d       	adc	r24, r1
+ b26:	11 24       	eor	r1, r1
+ b28:	91 1d       	adc	r25, r1
+ b2a:	b2 9f       	mul	r27, r18
+ b2c:	70 0d       	add	r23, r0
+ b2e:	81 1d       	adc	r24, r1
+ b30:	11 24       	eor	r1, r1
+ b32:	91 1d       	adc	r25, r1
+ b34:	08 95       	ret
+
+00000b36 <_exit>:
+ b36:	f8 94       	cli
+
+00000b38 <__stop_program>:
+ b38:	ff cf       	rjmp	.-2      	; 0xb38 <__stop_program>
